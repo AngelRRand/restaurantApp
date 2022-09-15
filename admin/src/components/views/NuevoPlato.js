@@ -1,6 +1,23 @@
 import React from 'react'
+import {useFormik} from 'formik'
+
 
 const NuevoPlato = () => {
+
+  const formik = useFormik({
+    initialValues: {
+      nombre: '',
+      precio: '',
+      categorias: '',
+      imagen: '',
+      description: '',
+    },
+    onSubmit:value=>{
+
+    }
+  })
+
+
   return (
     <>
     <h1 className='text-3xl font-light mb-3'>Agregar nuevo plato</h1>
@@ -14,6 +31,7 @@ const NuevoPlato = () => {
                 id='nombre'
                 type='text'
                 placeholder='Pizza Napolitana'
+                value={formik.values.nombre}
               />
             </div>
 
@@ -25,6 +43,7 @@ const NuevoPlato = () => {
                 type='number'
                 placeholder='$100'
                 min='0'
+                value={formik.values.precio}
               />
             </div>
 
