@@ -1,5 +1,5 @@
 import React from 'react'
-import {useFormik} from 'formik'
+import {validationSchema, useFormik} from 'formik'
 import * as Yup from 'yup'
 
 const NuevoPlato = () => {
@@ -13,17 +13,18 @@ const NuevoPlato = () => {
       description: '',
     },
     validationSchema: Yup.object({
-      nombre: Yub
+      nombre: Yup
       .string()
       .min(3, 'Los platos deben tener 3 caracteres')
       .required('El nombre del platillo es obligatorio'),
-      precio: Yub
+      precio: Yup
       .number()
       .min(1, 'Debes añadir un numero')
       .required('El precio del platillo es obligatorio'),
-      categorias: Yub
+      categorias: Yup
+      .string()
       .required('La categoria es obligatorio para crear u nuevo plato'),
-      description: Yub
+      description: Yup
       .string()
       .min(10, 'La description debe tener almenos 10 caracteres')
       .required('La categoria es obligatorio para crearlo'),
@@ -51,9 +52,16 @@ const NuevoPlato = () => {
                 placeholder='Pizza Napolitana'
                 value={formik.values.nombre}
                 onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
               />
             </div>
-
+            {
+              formik.touched.nombre && formik.errors.nombre ? (
+                <div>
+                  <p>{formik.errors.nombre}</p>
+                </div>
+              ) : null
+            }
             <div className='mb-4'>
               <label className='block text-gray-700 text-sm font-blod mb-2' htmlFor='precio'>Precio</label>
               <input
@@ -64,6 +72,7 @@ const NuevoPlato = () => {
                 min='0'
                 value={formik.values.precio}
                 onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
               />
             </div>
 
@@ -75,6 +84,7 @@ const NuevoPlato = () => {
                 name='categoria'
                 value={formik.values.categoria}
                 onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
               >
                 <option value=''>-- Seleccione --</option>
                 <option value='Desayuno'> Desayuno </option>
@@ -94,6 +104,7 @@ const NuevoPlato = () => {
                 type='file'
                 value={formik.values.imagen}
                 onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
               />
             </div>
 
@@ -105,6 +116,7 @@ const NuevoPlato = () => {
                 placeholder='Pizza Napolitana'
                 value={formik.values.description}
                 onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
               />
             </div>
 
