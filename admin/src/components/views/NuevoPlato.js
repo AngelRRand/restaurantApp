@@ -55,6 +55,23 @@ const NuevoPlato = () => {
   })
 
 
+  //Funciones Imagenes
+  const handleUploadStart =()=>{
+
+  }
+
+  const handleUploadError =()=>{
+    
+  }
+
+  const handleUploadSuccess =()=>{
+    
+  }
+
+  const handleProgress =()=>{
+    
+  }
+
   return (
     <>
       <h1 className='text-3xl font-light mb-3'>Agregar nuevo plato</h1>
@@ -165,7 +182,7 @@ const NuevoPlato = () => {
                 randomizeFilename
                 storageRef={firebase.storage.ref('productos')}
                 onUploadStart={handleUploadStart}
-                onUploadError={handleUploadStart}
+                onUploadError={handleUploadError}
                 onUploadSuccess={handleUploadSuccess}
                 onProgress={handleProgress}
               />
