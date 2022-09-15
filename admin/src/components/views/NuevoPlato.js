@@ -1,5 +1,5 @@
 import React from 'react'
-import {validationSchema, useFormik} from 'formik'
+import { validationSchema, useFormik } from 'formik'
 import * as Yup from 'yup'
 
 const NuevoPlato = () => {
@@ -14,22 +14,22 @@ const NuevoPlato = () => {
     },
     validationSchema: Yup.object({
       nombre: Yup
-      .string()
-      .min(3, 'Los platos deben tener 3 caracteres')
-      .required('El nombre del platillo es obligatorio'),
+        .string()
+        .min(3, 'Los platos deben tener 3 caracteres')
+        .required('El nombre del platillo es obligatorio'),
       precio: Yup
-      .number()
-      .min(1, 'Debes añadir un numero')
-      .required('El precio del platillo es obligatorio'),
+        .number()
+        .min(1, 'Debes añadir un numero')
+        .required('El precio del platillo es obligatorio'),
       categorias: Yup
-      .string()
-      .required('La categoria es obligatorio para crear u nuevo plato'),
+        .string()
+        .required('La categoria es obligatorio para crear u nuevo plato'),
       description: Yup
-      .string()
-      .min(10, 'La description debe tener almenos 10 caracteres')
-      .required('La categoria es obligatorio para crearlo'),
+        .string()
+        .min(10, 'La descripcion debe tener almenos 10 caracteres')
+        .required('La descripcion es obligatorio para crearlo'),
     }),
-    onSubmit : data =>{
+    onSubmit: data => {
       console.log(data)
     }
   })
@@ -37,16 +37,16 @@ const NuevoPlato = () => {
 
   return (
     <>
-    <h1 className='text-3xl font-light mb-3'>Agregar nuevo plato</h1>
-    <div className='flex justify-center mt-10'>
-      <div className=' w-full max-w-3xl'>
+      <h1 className='text-3xl font-light mb-3'>Agregar nuevo plato</h1>
+      <div className='flex justify-center mt-10'>
+        <div className=' w-full max-w-3xl'>
           <form
             onSubmit={formik.handleSubmit}
           >
             <div className='mb-4'>
               <label className='block text-gray-700 text-sm font-blod mb-2' htmlFor='nombre'>Nombre</label>
               <input
-                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
+                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                 id='nombre'
                 type='text'
                 placeholder='Pizza Napolitana'
@@ -57,7 +57,8 @@ const NuevoPlato = () => {
             </div>
             {
               formik.touched.nombre && formik.errors.nombre ? (
-                <div>
+                <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-7 mb-3' role='alert'>
+                  <p className='font-bold'>Hubo un error:</p>
                   <p>{formik.errors.nombre}</p>
                 </div>
               ) : null
@@ -65,7 +66,7 @@ const NuevoPlato = () => {
             <div className='mb-4'>
               <label className='block text-gray-700 text-sm font-blod mb-2' htmlFor='precio'>Precio</label>
               <input
-                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
+                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                 id='precio'
                 type='number'
                 placeholder='$100'
@@ -76,10 +77,19 @@ const NuevoPlato = () => {
               />
             </div>
 
+            {
+              formik.touched.precio && formik.errors.precio ? (
+                <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-7 mb-3' role='alert'>
+                  <p className='font-bold'>Hubo un error:</p>
+                  <p>{formik.errors.precio}</p>
+                </div>
+              ) : null
+            }
+
             <div className='mb-4'>
               <label className='block text-gray-700 text-sm font-blod mb-2' htmlFor='categoria'>Categoria</label>
               <select
-                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
+                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                 id='categoria'
                 name='categoria'
                 value={formik.values.categoria}
@@ -96,25 +106,44 @@ const NuevoPlato = () => {
               </select>
             </div>
 
+            {
+              formik.touched.categorias && formik.errors.categorias ? (
+                <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-7 mb-3' role='alert'>
+                  <p className='font-bold'>Hubo un error:</p>
+                  <p>{formik.errors.categorias}</p>
+                </div>
+              ) : null
+            }
+
             <div className='mb-4'>
-              <label className='block text-gray-700 text-sm font-blod mb-2' htmlFor='imagen'>Imagen</label>
-              <input
-                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
-                id='imagen'
-                type='file'
-                value={formik.values.imagen}
+              <label className='block text-gray-700 text-sm font-blod mb-2' htmlFor='descripcion'>Descripcion</label>
+              <textarea
+                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-40'
+                id='descripcion'
+                type='text'
+                placeholder='Pizza Napolitana'
+                value={formik.values.description}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
             </div>
 
+            {
+              formik.touched.description && formik.errors.description ? (
+                <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-7 mb-3' role='alert'>
+                  <p className='font-bold'>Hubo un error:</p>
+                  <p>{formik.errors.description}</p>
+                </div>
+              ) : null
+            }
+
             <div className='mb-4'>
-              <label className='block text-gray-700 text-sm font-blod mb-2' htmlFor='descripcion'>Descripcion</label>
-              <textarea
-                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-40' 
-                id='descripcion'
-                placeholder='Pizza Napolitana'
-                value={formik.values.description}
+              <label className='block text-gray-700 text-sm font-blod mb-2' htmlFor='imagen'>Imagen</label>
+              <input
+                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                id='imagen'
+                type='file'
+                value={formik.values.imagen}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
@@ -126,8 +155,8 @@ const NuevoPlato = () => {
               value='Agregar platillo'
             />
           </form>
+        </div>
       </div>
-    </div>
     </>
   )
 }
