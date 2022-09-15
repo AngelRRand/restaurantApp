@@ -7,9 +7,8 @@ class Firebase {
     constructor() {
         if(!firebase.apps.length){
             firebase.initializeApp(firebaseConfig)
- 
- 
         }
+        this.db = firebase.firestore()
     }
 }
  
