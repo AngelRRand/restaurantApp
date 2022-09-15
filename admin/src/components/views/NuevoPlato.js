@@ -6,13 +6,13 @@ const NuevoPlato = () => {
 
   const formik = useFormik({
     initialValues: {
-      nombre: '',
+      nombre: 'AAAAAAAAA',
       precio: '',
       categorias: '',
       imagen: '',
       description: '',
     },
-    onSubmit:value=>{
+    onSubmit : data =>{
 
     }
   })
@@ -34,6 +34,7 @@ const NuevoPlato = () => {
                 type='text'
                 placeholder='Pizza Napolitana'
                 value={formik.values.nombre}
+                onChange={formik.handleChange}
               />
             </div>
 
@@ -46,6 +47,7 @@ const NuevoPlato = () => {
                 placeholder='$100'
                 min='0'
                 value={formik.values.precio}
+                onChange={formik.handleChange}
               />
             </div>
 
@@ -55,6 +57,8 @@ const NuevoPlato = () => {
                 className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
                 id='categoria'
                 name='categoria'
+                value={formik.values.categoria}
+                onChange={formik.handleChange}
               >
                 <option value=''>-- Seleccione --</option>
                 <option value='Desayuno'> Desayuno </option>
@@ -72,6 +76,8 @@ const NuevoPlato = () => {
                 className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
                 id='imagen'
                 type='file'
+                value={formik.values.imagen}
+                onChange={formik.handleChange}
               />
             </div>
 
@@ -81,6 +87,8 @@ const NuevoPlato = () => {
                 className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-40' 
                 id='descripcion'
                 placeholder='Pizza Napolitana'
+                value={formik.values.description}
+                onChange={formik.handleChange}
               />
             </div>
 
