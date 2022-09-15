@@ -16,26 +16,20 @@ const NuevoPlato = () => {
       nombre: Yub
       .string()
       .min(3, 'Los platos deben tener 3 caracteres')
-      .required('El nombre del platillo es obligatorio para crearlo'),
+      .required('El nombre del platillo es obligatorio'),
       precio: Yub
-      .string()
-      .min(3, 'Los platos deben tener 3 caracteres')
-      .required('El nombre del platillo es obligatorio para crearlo'),
+      .number()
+      .min(1, 'Debes añadir un numero')
+      .required('El precio del platillo es obligatorio'),
       categorias: Yub
-      .string()
-      .min(3, 'Los platos deben tener 3 caracteres')
-      .required('El nombre del platillo es obligatorio para crearlo'),
-      imagen: Yub
-      .string()
-      .min(3, 'Los platos deben tener 3 caracteres')
-      .required('El nombre del platillo es obligatorio para crearlo'),
+      .required('La categoria es obligatorio para crear u nuevo plato'),
       description: Yub
       .string()
-      .min(3, 'Los platos deben tener 3 caracteres')
-      .required('El nombre del platillo es obligatorio para crearlo'),
+      .min(10, 'La description debe tener almenos 10 caracteres')
+      .required('La categoria es obligatorio para crearlo'),
     }),
     onSubmit : data =>{
-
+      console.log(data)
     }
   })
 
