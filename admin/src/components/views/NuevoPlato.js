@@ -158,13 +158,16 @@ const NuevoPlato = () => {
 
             <div className='mb-4'>
               <label className='block text-gray-700 text-sm font-blod mb-2' htmlFor='imagen'>Imagen</label>
-              <input
-                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+              <FileUploader
+                accept='image/*'
                 id='imagen'
-                type='file'
-                value={formik.values.imagen}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
+                name='imagen'
+                randomizeFilename
+                storageRef={firebase.storage.ref('productos')}
+                onUploadStart={handleUploadStart}
+                onUploadError={handleUploadStart}
+                onUploadSuccess={handleUploadSuccess}
+                onProgress={handleProgress}
               />
             </div>
 
