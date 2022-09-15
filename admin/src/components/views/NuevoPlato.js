@@ -6,7 +6,7 @@ const NuevoPlato = () => {
 
   const formik = useFormik({
     initialValues: {
-      nombre: 'AAAAAAAAA',
+      nombre: '',
       precio: '',
       categorias: '',
       imagen: '',
