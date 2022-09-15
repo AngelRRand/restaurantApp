@@ -7,7 +7,7 @@ const Platillo = ({ platillo }) => {
 
     //Context de firebase para cambios en la db
     const {firebase} = useContext(FirebaseContext)
-    const { nombre, precio, categoria, imagen, description, existencia } = platillo
+    const { nombre, precio, categoria, imagen, description, existencia, id } = platillo
 
     const actualizar = ()=>{
         const existencia = (existenciaRef.current.value === 'true')
@@ -17,7 +17,7 @@ const Platillo = ({ platillo }) => {
                 existencia
             })
         } catch (error) {
-            
+            console.log(error)
         }
     }
     return (
