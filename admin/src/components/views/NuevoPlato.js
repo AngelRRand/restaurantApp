@@ -116,11 +116,10 @@ const NuevoPlato = () => {
             }
 
             <div className='mb-4'>
-              <label className='block text-gray-700 text-sm font-blod mb-2' htmlFor='descripcion'>Descripcion</label>
+              <label className='block text-gray-700 text-sm font-blod mb-2' htmlFor='description'>Descripcion</label>
               <textarea
                 className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-40'
-                id='descripcion'
-                type='text'
+                id='description'
                 placeholder='Pizza Napolitana'
                 value={formik.values.description}
                 onChange={formik.handleChange}
