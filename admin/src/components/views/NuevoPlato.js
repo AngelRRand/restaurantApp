@@ -109,7 +109,7 @@ const NuevoPlato = () => {
             </div>
             {
               formik.touched.nombre && formik.errors.nombre ? (
-                <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-7 mb-3' role='alert'>
+                <div className='bg-gray-900 border-l-4 border-pink-500 text-pink-700 p-2 mb-3' role='alert'>
                   <p className='font-bold '>Hubo un error:</p>
                   <p>{formik.errors.nombre}</p>
                 </div>
@@ -131,7 +131,7 @@ const NuevoPlato = () => {
 
             {
               formik.touched.precio && formik.errors.precio ? (
-                <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-7 mb-3' role='alert'>
+                <div className='bg-gray-900 border-l-4 border-pink-500 text-pink-700 p-2 mb-3' role='alert'>
                   <p className='font-bold'>Hubo un error:</p>
                   <p>{formik.errors.precio}</p>
                 </div>
@@ -160,7 +160,7 @@ const NuevoPlato = () => {
 
             {
               formik.touched.categoria && formik.errors.categoria ? (
-                <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-7 mb-3' role='alert'>
+                <div className='bg-gray-900 border-l-4 border-pink-500 text-pink-700 p-2 mb-3' role='alert'>
                   <p className='font-bold'>Hubo un error:</p>
                   <p>{formik.errors.categoria}</p>
                 </div>
@@ -181,7 +181,7 @@ const NuevoPlato = () => {
 
             {
               formik.touched.description && formik.errors.description ? (
-                <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-7 mb-3' role='alert'>
+                <div className='bg-gray-900 border-l-4 border-pink-500 text-pink-700 p-2 mb-3' role='alert'>
                   <p className='font-bold'>Hubo un error:</p>
                   <p>{formik.errors.description}</p>
                 </div>
