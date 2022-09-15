@@ -97,7 +97,7 @@ const NuevoPlato = () => {
             <div className='mb-4'>
               <label className='block text-sm font-blod mb-2 text-white' htmlFor='nombre'>Nombre</label>
               <input
-                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-900 leading-tight focus:outline-none focus:shadow-outline'
+                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-400 bg-gray-900 leading-tight focus:outline-none focus:shadow-outline'
                 id='nombre'
                 type='text'
                 placeholder='Pizza Napolitana'
@@ -117,7 +117,7 @@ const NuevoPlato = () => {
             <div className='mb-4'>
               <label className='block text-sm font-blod mb-2 text-white' htmlFor='precio'>Precio</label>
               <input
-                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-900 leading-tight focus:outline-none focus:shadow-outline'
+                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-400 bg-gray-900 leading-tight focus:outline-none focus:shadow-outline'
                 id='precio'
                 type='number'
                 placeholder='$100'
@@ -140,7 +140,7 @@ const NuevoPlato = () => {
             <div className='mb-4'>
               <label className='block  text-sm font-blod mb-2 text-white' htmlFor='categoria'>Categoria</label>
               <select
-                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-900 leading-tight focus:outline-none focus:shadow-outline'
+                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-400 bg-gray-900 leading-tight focus:outline-none focus:shadow-outline'
                 id='categoria'
                 name='categoria'
                 value={formik.values.categoria}
@@ -169,7 +169,7 @@ const NuevoPlato = () => {
             <div className='mb-4'>
               <label className='block text-white text-sm font-blod mb-2 ' htmlFor='description'>Descripcion</label>
               <textarea
-                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-900 leading-tight focus:outline-none focus:shadow-outline h-40'
+                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-400 bg-gray-900 leading-tight focus:outline-none focus:shadow-outline h-40'
                 id='description'
                 placeholder='Pizza Napolitana'
                 value={formik.values.description}
