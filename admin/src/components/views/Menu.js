@@ -1,7 +1,7 @@
 import React,{useState, useEffect, useContext} from 'react'
 import { Link } from 'react-router-dom'
 import { FirebaseContext} from '../../firebase'
-
+import Platillo from '../ui/Platillo'
 
 const Menu = () => {
 
@@ -35,6 +35,14 @@ const Menu = () => {
       to='/nuevoplato' 
       className='ml-3 mb-5 p-2 text-white uppercase font-bold bg-pink-600 hover:bg-pink-700 inline-block'
       >Agregar uno platillo</Link>
+      {
+        platillos.map(p =>(
+          <Platillo
+            key={p.id}
+            platillo={p}
+          />
+        ))
+      }
     </>
   )
 }
