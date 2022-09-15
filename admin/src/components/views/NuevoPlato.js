@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -8,6 +8,11 @@ import FileUploader from 'react-firebase-file-uploader'
 
 
 const NuevoPlato = () => {
+
+
+  const [subiendo, setSubiendo] = useState(false);
+  const [progreso, setProgreso] = useState(0);
+  const [urlImg, setUrlImg] = useState(''); 
 
 
   const navigate = useNavigate();
@@ -57,19 +62,28 @@ const NuevoPlato = () => {
 
   //Funciones Imagenes
   const handleUploadStart =()=>{
-
+    setProgreso(0)
+    setSubiendo(true)
   }
 
-  const handleUploadError =()=>{
-    
+  const handleUploadError = error =>{
+    setSubiendo(false)
+    console.log(error)
   }
 
-  const handleUploadSuccess =()=>{
-    
+  const handleUploadSuccess = nombre =>{
+    setProgreso(100)
+    setSubiendo(false)
+
+    //Guardar la url
+
+    const url = firebase.storage.ref('productos').child(nombre).getDownloadURL()
+    setUrlImg(url)
   }
 
-  const handleProgress =()=>{
-    
+  const handleProgress = progreso =>{
+    setProgreso(progreso)
+    console.log(progreso)
   }
 
   return (
