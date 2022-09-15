@@ -1,13 +1,24 @@
 import React,{ useRef, useContext} from 'react'
+import { FirebaseContext} from '../../firebase'
 
 const Platillo = ({ platillo }) => {
     //Existencia Ref
     const existenciaRef = useRef(platillo.existencia)
 
+    //Context de firebase para cambios en la db
+    const {firebase} = useContext(FirebaseContext)
     const { nombre, precio, categoria, imagen, description, existencia } = platillo
 
     const actualizar = ()=>{
-        
+        const existencia = (existenciaRef.current.value === 'true')
+
+        try {
+            firebase.db.collection('productos').doc(id).update({
+                existencia
+            })
+        } catch (error) {
+            
+        }
     }
     return (
         <div className='w-full px-3 mb-4'>
