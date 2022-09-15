@@ -5,9 +5,11 @@ import { FirebaseContext} from '../../firebase'
 
 const Menu = () => {
 
-
+  const [platillos, setPlatillos] = useState([]);
   const {firebase} = useContext(FirebaseContext)
 
+
+  //Consultando la base de datos al cargar
   useEffect(() => {
     const obtenerPlatillos = () =>{
       firebase.db.collection('productos').onSnapshot(handleSnapshot);
@@ -22,7 +24,8 @@ const Menu = () => {
         ...doc.data()
       }
     });
-    console.log(platillo)
+    //Guardando los resultados
+    setPlatillos(platillo)
   }
 
   return (
