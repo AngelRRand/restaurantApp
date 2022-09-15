@@ -5,7 +5,9 @@ const Menu = () => {
   return (
     <>
       <div>Menu</div>
-      <Link to='/nuevoplato' className='ml-3 mb-5 p-2 text-white uppercase font-bold bg-orange-600 hover:bg-orange-700 inline-block'>Agregar uno platillo</Link>
+      <Link to='/nuevoplato' 
+      className='ml-3 mb-5 p-2 text-white uppercase font-bold bg-orange-600 hover:bg-orange-700 inline-block'
+      >Agregar uno platillo</Link>
     </>
   )
 }
