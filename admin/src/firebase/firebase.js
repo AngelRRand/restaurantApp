@@ -9,6 +9,7 @@ class Firebase {
             firebase.initializeApp(firebaseConfig)
         }
         this.db = firebase.firestore()
+        this.storage = firebase.storage();
     }
 }
  
