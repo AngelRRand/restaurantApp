@@ -4,7 +4,6 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import {FirebaseContext} from '../../firebase';
 import FileUploader from 'react-firebase-file-uploader'
-import {ref} from  "firebase/storage";
 
 const NuevoPlato = () => {
 

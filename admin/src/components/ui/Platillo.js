@@ -1,9 +1,14 @@
-import React from 'react'
+import React,{ useRef, useContext} from 'react'
 
 const Platillo = ({ platillo }) => {
+    //Existencia Ref
+    const existenciaRef = useRef(platillo.existencia)
 
     const { nombre, precio, categoria, imagen, description, existencia } = platillo
 
+    const actualizar = ()=>{
+        
+    }
     return (
         <div className='w-full px-3 mb-4'>
             <div className='p-5 shadow-md bg-gray-800'>
@@ -16,6 +21,8 @@ const Platillo = ({ platillo }) => {
                                 <select 
                                 className='bg-slate-900 text-white shadow border appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline'
                                 value={existencia}
+                                ref={existenciaRef}
+                                onChange={()=> actualizar()}
                                 >
                                     <option className=' text-white' value='true'>Disponible</option>
                                     <option className=' text-white' value='false'>No Disponible</option>
