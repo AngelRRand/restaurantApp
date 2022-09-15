@@ -14,10 +14,10 @@ const Sidebar = () => {
         <p className='mt-3 text-gray-600'>Administra tu restaurante, explora y expande tu negocio</p>
         <nav>
           <NavLink className={
-            `${urlActual === '/' ? 'text-yellow-400' : 'text-gray-400'} p-1 block hover:bg-yellow-400`}
+            `${urlActual === '/' ? 'text-yellow-400' : 'text-gray-400'} p-1 block hover:text-yellow-200`}
             to="/">Ordenes</NavLink>
           <NavLink className={
-            `${urlActual === '/menu' ? 'text-yellow-400' : 'text-gray-400'} p-1 block hover:bg-yellow-400`}
+            `${urlActual === '/menu' ? 'text-yellow-400' : 'text-gray-400'} p-1 block hover:text-yellow-200`}
             to="/menu">Menu</NavLink>
         </nav>
       </div>
