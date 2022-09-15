@@ -4,8 +4,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import {FirebaseContext} from '../../firebase';
 import FileUploader from 'react-firebase-file-uploader'
-
-
+import {ref} from  "firebase/storage";
 
 const NuevoPlato = () => {
 
@@ -49,7 +48,8 @@ const NuevoPlato = () => {
     }),
     onSubmit: data => {
       try {
-        NuevoPlato.existencia = true
+        data.existencia = true
+        data.imagen = urlImg
         firebase.db.collection('productos').add(data)
 
         navigate('/menu')
@@ -71,13 +71,14 @@ const NuevoPlato = () => {
     console.log(error)
   }
 
-  const handleUploadSuccess = nombre =>{
+  const handleUploadSuccess = async nombre =>{
     setProgreso(100)
     setSubiendo(false)
 
     //Guardar la url
+    console.log(nombre)
 
-    const url = firebase.storage.ref('productos').child(nombre).getDownloadURL()
+    const url = await firebase.storage.ref('productos').child(nombre).getDownloadURL()
     setUrlImg(url)
   }
 
@@ -158,10 +159,10 @@ const NuevoPlato = () => {
             </div>
 
             {
-              formik.touched.categorias && formik.errors.categorias ? (
+              formik.touched.categoria && formik.errors.categoria ? (
                 <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-7 mb-3' role='alert'>
                   <p className='font-bold'>Hubo un error:</p>
-                  <p>{formik.errors.categorias}</p>
+                  <p>{formik.errors.categoria}</p>
                 </div>
               ) : null
             }
