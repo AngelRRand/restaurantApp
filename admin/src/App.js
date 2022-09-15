@@ -9,9 +9,9 @@ import { Routes, Route } from "react-router-dom"
 
 export default function App() {
   return (
-    <div className="md:flex">
+    <div className="md:flex min-h-screen">
       <Sidebar/>
-      <div className="md:w-3/5 xl:w-4/5">
+      <div className="md:w-3/5 xl:w-4/5 p-5">
 
       <Routes>
         <Route path="/" element={<Ordenes/>} />
