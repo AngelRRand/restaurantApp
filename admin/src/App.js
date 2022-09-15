@@ -3,14 +3,14 @@ import Menu from "./components/views/Menu"
 import NuevoPlato from "./components/views/NuevoPlato"
 import Sidebar from "./components/ui/Sidebar"
 
-import firebase, {FirebaseContext} from './firebase'
 
+import firebase, {FirebaseContext} from './firebase'
 import { Routes, Route } from "react-router-dom"
 
 
 export default function App() {
   return (
-    <FirebaseContext>
+    <FirebaseContext.Provider value={{firebase}}>
 
     <div className="md:flex min-h-screen">
       <Sidebar/>
@@ -26,6 +26,6 @@ export default function App() {
 
     </div>
 
-    </FirebaseContext>
+    </FirebaseContext.Provider>
   )
 }
