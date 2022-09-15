@@ -202,7 +202,22 @@ const NuevoPlato = () => {
                 onProgress={handleProgress}
               />
             </div>
-
+            {
+              subiendo && (
+                <div className='h-12 relative w-full border'>
+                  <div className='bg-orange-500 absolute left-0 top-0 text-white px-2 text-sm h-12 flex items-center' style={{width: `${progreso}%`}}>
+                    {progreso} %
+                  </div>
+                </div>
+              )
+            }
+            {
+              urlImg && (
+                <p className='bg-orange-500 text-white p-3 t text-center my-5'>
+                  La imagen se subio correctamente
+                </p>
+              )
+            }
             <input
               type='submit'
               className='ml-3 mb-5 p-2 text-white uppercase font-bold bg-orange-600 hover:bg-orange-700 inline-block'
