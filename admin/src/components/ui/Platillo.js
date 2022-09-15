@@ -10,6 +10,15 @@ const Platillo = ({ platillo }) => {
                 <div className='lg:flex'>
                     <div className='lg:w-5/12 xl:w-3/12'>
                         <img src={imagen} alt='plato' />
+                        <div className='sm:flex sm:-mx-2'>
+                            <label className='block mt-5 sm:w-2/4'>
+                                <span className='block text-white'>Existencia</span>
+                                <select className='bg-slate-900 text-white'>
+                                    <option className=' text-white' value='true'>Disponible</option>
+                                    <option className=' text-white' value='false'>No Disponible</option>
+                                </select>
+                            </label>
+                        </div>
                     </div>
                     <div className='lg:w-5/12 xl:w-8/12 pl-5'>
                         <p className='font-bold text-4xl text-pink-400 mb-4'>{nombre}</p>
