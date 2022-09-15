@@ -4,6 +4,21 @@ import { FirebaseContext} from '../../firebase'
 
 
 const Menu = () => {
+
+
+  const {FirebaseContext} = useContext(FirebaseContext)
+
+  useEffect(() => {
+    const obtenerPlatillos = () =>{
+      const resultado =   firebase.db.collection('productos').onSnapshot(handleSnapshot);
+    }
+    obtenerPlatillos()
+  }, []);
+
+  function handleSnapshot(snapshot){
+    
+  }
+
   return (
     <>
       <h1 className='text-3xl font-light text-white'>Menu</h1>
