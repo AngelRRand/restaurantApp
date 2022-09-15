@@ -89,16 +89,16 @@ const NuevoPlato = () => {
 
   return (
     <>
-      <h1 className='text-3xl font-light mb-3'>Agregar nuevo plato</h1>
+      <h1 className='text-3xl font-light mb-3 text-white'>Agregar nuevo plato</h1>
       <div className='flex justify-center mt-10'>
         <div className=' w-full max-w-3xl'>
           <form
             onSubmit={formik.handleSubmit}
           >
             <div className='mb-4'>
-              <label className='block text-gray-700 text-sm font-blod mb-2' htmlFor='nombre'>Nombre</label>
+              <label className='block text-sm font-blod mb-2 text-white' htmlFor='nombre'>Nombre</label>
               <input
-                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-900 leading-tight focus:outline-none focus:shadow-outline'
                 id='nombre'
                 type='text'
                 placeholder='Pizza Napolitana'
@@ -110,15 +110,15 @@ const NuevoPlato = () => {
             {
               formik.touched.nombre && formik.errors.nombre ? (
                 <div className='bg-red-100 border-l-4 border-red-500 text-red-700 p-7 mb-3' role='alert'>
-                  <p className='font-bold'>Hubo un error:</p>
+                  <p className='font-bold '>Hubo un error:</p>
                   <p>{formik.errors.nombre}</p>
                 </div>
               ) : null
             }
             <div className='mb-4'>
-              <label className='block text-gray-700 text-sm font-blod mb-2' htmlFor='precio'>Precio</label>
+              <label className='block text-sm font-blod mb-2 text-white' htmlFor='precio'>Precio</label>
               <input
-                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-900 leading-tight focus:outline-none focus:shadow-outline'
                 id='precio'
                 type='number'
                 placeholder='$100'
@@ -139,9 +139,9 @@ const NuevoPlato = () => {
             }
 
             <div className='mb-4'>
-              <label className='block text-gray-700 text-sm font-blod mb-2' htmlFor='categoria'>Categoria</label>
+              <label className='block  text-sm font-blod mb-2 text-white' htmlFor='categoria'>Categoria</label>
               <select
-                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-900 leading-tight focus:outline-none focus:shadow-outline'
                 id='categoria'
                 name='categoria'
                 value={formik.values.categoria}
@@ -168,9 +168,9 @@ const NuevoPlato = () => {
             }
 
             <div className='mb-4'>
-              <label className='block text-gray-700 text-sm font-blod mb-2' htmlFor='description'>Descripcion</label>
+              <label className='block text-white text-sm font-blod mb-2 ' htmlFor='description'>Descripcion</label>
               <textarea
-                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-40'
+                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 bg-gray-900 leading-tight focus:outline-none focus:shadow-outline h-40'
                 id='description'
                 placeholder='Pizza Napolitana'
                 value={formik.values.description}
@@ -189,7 +189,7 @@ const NuevoPlato = () => {
             }
 
             <div className='mb-4'>
-              <label className='block text-gray-700 text-sm font-blod mb-2' htmlFor='imagen'>Imagen</label>
+              <label className='block text-white text-sm font-blod mb-2' htmlFor='imagen'>Imagen</label>
               <FileUploader
                 accept='image/*'
                 id='imagen'
@@ -205,7 +205,7 @@ const NuevoPlato = () => {
             {
               subiendo && (
                 <div className='h-12 relative w-full border'>
-                  <div className='bg-orange-500 absolute left-0 top-0 text-white px-2 text-sm h-12 flex items-center' style={{width: `${progreso}%`}}>
+                  <div className='bg-pink-500 absolute left-0 top-0 text-white px-2 text-sm h-12 flex items-center' style={{width: `${progreso}%`}}>
                     {progreso} %
                   </div>
                 </div>
@@ -213,14 +213,14 @@ const NuevoPlato = () => {
             }
             {
               urlImg && (
-                <p className='bg-orange-500 text-white p-3 t text-center my-5'>
+                <p className='bg-pink-500 text-white p-3 t text-center my-5'>
                   La imagen se subio correctamente
                 </p>
               )
             }
             <input
               type='submit'
-              className='ml-3 mb-5 p-2 text-white uppercase font-bold bg-orange-600 hover:bg-orange-700 inline-block'
+              className='ml-3 mb-5 p-2 text-white uppercase font-bold bg-pink-600 hover:bg-pink-700 inline-block'
               value='Agregar platillo'
             />
           </form>

@@ -14,7 +14,7 @@ export default function App() {
 
     <div className="md:flex min-h-screen">
       <Sidebar/>
-      <div className="md:w-3/5 xl:w-4/5 p-5">
+      <div className="md:w-3/5 xl:w-4/5 p-5 bg-gray-600">
 
       <Routes>
         <Route path="/" element={<Ordenes/>} />
