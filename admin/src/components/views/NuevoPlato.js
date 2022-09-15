@@ -23,7 +23,9 @@ const NuevoPlato = () => {
     <h1 className='text-3xl font-light mb-3'>Agregar nuevo plato</h1>
     <div className='flex justify-center mt-10'>
       <div className=' w-full max-w-3xl'>
-          <form>
+          <form
+            onSubmit={formik.handleSubmit}
+          >
             <div className='mb-4'>
               <label className='block text-gray-700 text-sm font-blod mb-2' htmlFor='nombre'>Nombre</label>
               <input
