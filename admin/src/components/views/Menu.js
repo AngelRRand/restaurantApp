@@ -6,17 +6,23 @@ import { FirebaseContext} from '../../firebase'
 const Menu = () => {
 
 
-  const {FirebaseContext} = useContext(FirebaseContext)
+  const {firebase} = useContext(FirebaseContext)
 
   useEffect(() => {
     const obtenerPlatillos = () =>{
-      const resultado =   firebase.db.collection('productos').onSnapshot(handleSnapshot);
+      firebase.db.collection('productos').onSnapshot(handleSnapshot);
     }
     obtenerPlatillos()
   }, []);
 
   function handleSnapshot(snapshot){
-    
+    const platillo = snapshot.docs.map( doc =>{
+      return{
+        id: doc.id,
+        ...doc.data()
+      }
+    });
+    console.log(platillo)
   }
 
   return (
