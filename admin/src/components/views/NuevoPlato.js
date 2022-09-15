@@ -62,6 +62,12 @@ const NuevoPlato = () => {
                 placeholder='Pizza Napolitana'
               />
             </div>
+
+            <input
+              type='submit'
+              className='ml-3 mb-5 p-2 text-white uppercase font-bold bg-orange-600 hover:bg-orange-700 inline-block'
+              value='Agregar platillo'
+            />
           </form>
       </div>
     </div>
