@@ -1,5 +1,5 @@
 import React from 'react'
-import { validationSchema, useFormik } from 'formik'
+import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
 const NuevoPlato = () => {
