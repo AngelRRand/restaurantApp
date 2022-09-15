@@ -90,7 +90,7 @@ const NuevoPlato = () => {
     <>
       <h1 className='text-3xl font-light mb-3 text-white'>Agregar nuevo plato</h1>
       <div className='flex justify-center mt-10'>
-        <div className=' w-full max-w-3xl'>
+        <div className='w-full max-w-3xl'>
           <form
             onSubmit={formik.handleSubmit}
           >
