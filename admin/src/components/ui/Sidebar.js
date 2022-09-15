@@ -1,9 +1,8 @@
 import React from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
-
+import { NavLink, useLocation, Link } from 'react-router-dom'
 const Sidebar = () => {
   const location = useLocation()
-  const urlActual = location.pathname 
+  const urlActual = location.pathname
 
   return (
     <div className="md:w-2/5 xl:w-1/5 bg-gray-900">
@@ -19,6 +18,10 @@ const Sidebar = () => {
           <NavLink className={
             `${urlActual === '/menu' ? 'text-red-400' : 'text-gray-400'} p-1 block hover:text-red-200`}
             to="/menu">Menu</NavLink>
+          <Link
+            to='/nuevoplato'
+            className='ml-3 mb-5 p-2 mt-20 text-white uppercase font-bold bg-pink-600 hover:bg-pink-700 inline-block'
+          >Agregar uno platillo</Link>
         </nav>
       </div>
     </div>
