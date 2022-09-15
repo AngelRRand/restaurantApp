@@ -1,9 +1,13 @@
-import React, {useContext} from 'react'
-import { useFormik } from 'formik'
-import * as Yup from 'yup'
-import {FirebaseContext} from '../../firebase'
+import React, {useContext} from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import {FirebaseContext} from '../../firebase';
+import { useNavigate } from 'react-router-dom';
 
 const NuevoPlato = () => {
+
+
+  const navigate = useNavigate();
 
   //Firebase context
   const { firebase } = useContext(FirebaseContext)
@@ -14,7 +18,7 @@ const NuevoPlato = () => {
     initialValues: {
       nombre: '',
       precio: '',
-      categorias: '',
+      categoria: '',
       imagen: '',
       description: '',
     },
@@ -27,7 +31,7 @@ const NuevoPlato = () => {
         .number()
         .min(1, 'Debes añadir un numero')
         .required('El precio del platillo es obligatorio'),
-      categorias: Yup
+      categoria: Yup
         .string()
         .required('La categoria es obligatorio para crear u nuevo plato'),
       description: Yup
@@ -36,7 +40,14 @@ const NuevoPlato = () => {
         .required('La descripcion es obligatorio para crearlo'),
     }),
     onSubmit: data => {
-      console.log(data)
+      try {
+        NuevoPlato.existencia = true
+        firebase.db.collection('productos').add(data)
+
+        navigate('/menu')
+      } catch (error) {
+        console.log(error)
+      }
     }
   })
 
