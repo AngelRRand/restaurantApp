@@ -2,7 +2,7 @@ import React from 'react'
 
 const Platillo = ({ platillo }) => {
 
-    const { nombre, precio, categoria, imagen, description } = platillo
+    const { nombre, precio, categoria, imagen, description, existencia } = platillo
 
     return (
         <div className='w-full px-3 mb-4'>
@@ -13,7 +13,10 @@ const Platillo = ({ platillo }) => {
                         <div className='sm:flex sm:-mx-2'>
                             <label className='block mt-5 sm:w-2/4'>
                                 <span className='block text-white'>Existencia</span>
-                                <select className='bg-slate-900 text-white'>
+                                <select 
+                                className='bg-slate-900 text-white shadow border appearance-none rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline'
+                                value={existencia}
+                                >
                                     <option className=' text-white' value='true'>Disponible</option>
                                     <option className=' text-white' value='false'>No Disponible</option>
                                 </select>
