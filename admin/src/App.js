@@ -3,12 +3,15 @@ import Menu from "./components/views/Menu"
 import NuevoPlato from "./components/views/NuevoPlato"
 import Sidebar from "./components/ui/Sidebar"
 
+import firebase, {FirebaseContext} from './firebase'
 
 import { Routes, Route } from "react-router-dom"
 
 
 export default function App() {
   return (
+    <FirebaseContext>
+
     <div className="md:flex min-h-screen">
       <Sidebar/>
       <div className="md:w-3/5 xl:w-4/5 p-5">
@@ -22,5 +25,7 @@ export default function App() {
       </div>
 
     </div>
+
+    </FirebaseContext>
   )
 }
