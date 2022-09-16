@@ -1,8 +1,11 @@
+import { View, Text } from 'react-native'
 import React from 'react'
 
 const ResumenPedido = () => {
   return (
-    <div>ResumenPedido</div>
+    <View>
+      <Text>ResumenPedido</Text>
+    </View>
   )
 }
 
