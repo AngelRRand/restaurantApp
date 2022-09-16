@@ -15,7 +15,13 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-
+        <Stack.Screen
+          name='nuevaOrden'
+          component={NuevaOrden}
+          options={{
+            title: 'Nueva Orden'
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
