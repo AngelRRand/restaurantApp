@@ -32,6 +32,41 @@ export default function App() {
             title: 'Nueva Orden'
           }}
         />
+        <Stack.Screen
+          name='menu'
+          component={Menu}
+          options={{
+            title: 'Menu'
+          }}
+        />
+        <Stack.Screen
+          name='formularioPlato'
+          component={FormularioPlato}
+          options={{
+            title: 'Formulario Plato'
+          }}
+        />
+        <Stack.Screen
+          name='detallesPlato'
+          component={DetallesPlato}
+          options={{
+            title: 'Detalles Plato'
+          }}
+        />
+        <Stack.Screen
+          name='progresoPedido'
+          component={ProgresoPedido}
+          options={{
+            title: 'Progreso Pedido'
+          }}
+        />
+        <Stack.Screen
+          name='resumenPedido'
+          component={ResumenPedido}
+          options={{
+            title: 'Resumen Pedido'
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
