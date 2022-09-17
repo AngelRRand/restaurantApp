@@ -14,8 +14,8 @@ const PedidosbaseState = props =>{
     return(
         <PedidosbaseContext.Provider
             value={{
-                menu: state.menu,
-                firebase
+                pedido: state.pedido,
+                
             }}
         >
             {props.children}
