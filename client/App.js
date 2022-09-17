@@ -23,6 +23,7 @@ export default function App() {
             headerTitleStyle: {
               fontWeight: 'bold',
               color: 'white',
+            
             }
           }}
         >
@@ -30,7 +31,9 @@ export default function App() {
             name='nuevaOrden'
             component={NuevaOrden}
             options={{
-              title: 'Nueva Orden'
+              headerTitleAlign: 'center',
+              title: 'Nueva Orden',
+              
             }}
           />
           <Stack.Screen
