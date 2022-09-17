@@ -19,7 +19,7 @@ export default function App() {
         <Stack.Navigator
           screenOptions={{
             headerStyle: {
-              backgroundColor: '#DA3DBF'
+              backgroundColor: '#DZ3DBF'
             },
             headerTitleStyle: {
               fontWeight: 'bold',
@@ -74,7 +74,7 @@ export default function App() {
           />
         </Stack.Navigator>
       </NavigationContainer>
-      
+
       </PedidosbaseState>
 
     </FirebaseState>
