@@ -2,7 +2,7 @@ import { useReducer } from "react";
 import FirebaseReducer from "./firebaseReducer";
 import FirebaseContext from "./firebaseContext";
 
-const firebaseState = props =>{
+const FirebaseState = props =>{
 
     const initialState ={
         menu: []
@@ -17,3 +17,5 @@ const firebaseState = props =>{
         </FirebaseContext.Provider>
     )
 }
+
+export default FirebaseState

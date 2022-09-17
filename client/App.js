@@ -1,5 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import FirebaseState from './src/context/firebase/firebaseState.js';
 
 import DetallesPlato from './src/view/DetallesPlato.js';
 import FormularioPlato from './src/view/FormularioPlato.js';
