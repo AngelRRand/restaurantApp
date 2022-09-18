@@ -7,7 +7,7 @@ const NuevaOrden = () => {
   return (
     <>
       <LinearGradient
-        colors={['#1d1d1d', '#444444', '#421b53']}
+        colors={['#1d1d1d', '#0f0f0f', '#421b53']}
         style={stylesGlobal.container}>
         <Text>Hola</Text>
       </LinearGradient>
