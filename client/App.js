@@ -4,7 +4,7 @@ import FirebaseState from './src/context/firebase/firebaseState.js';
 import PedidosbaseState from './src/context/pedidos/pedidosState.js';
 import DetallesPlato from './src/view/DetallesPlato.js';
 import FormularioPlato from './src/view/FormularioPlato.js';
-import Menu from './src/view/Menu.js';
+import RestaurantMenu from './src/view/RestaurantMenu.js';
 import NuevaOrden from './src/view/NuevaOrden.js';
 import ProgresoPedido from './src/view/ProgresoPedido.js';
 import ResumenPedido from './src/view/ResumenPedido.js';
@@ -19,7 +19,7 @@ export default function App() {
         <Stack.Navigator
           screenOptions={{
             headerStyle: {
-              backgroundColor: '#1f1f1f'
+              backgroundColor: '#0f0f0f'
             },
             headerTitleStyle: {
               fontWeight: 'bold',
@@ -40,7 +40,7 @@ export default function App() {
           />
           <Stack.Screen
             name='menu'
-            component={Menu}
+            component={RestaurantMenu}
             options={{
               title: 'Menu'
             }}
