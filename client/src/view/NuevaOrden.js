@@ -1,18 +1,16 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 import stylesGlobal from '../styles/globalStyles'
-import {LinearGradient} from 'expo-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const NuevaOrden = () => {
   return (
     <>
-    <LinearGradient 
-      colors={['#2b1f26', '#2e0c21']} 
-      start={{x: 0.0, y: 0.25}} end={{x: 0.5, y: 1.0}}
-  locations={[0,0.5,0.6]}
-      style={stylesGlobal.container}>
-      <Text>Hola</Text>
-    </LinearGradient>
+      <LinearGradient
+        colors={['#4c669f', '#3b5998', '#192f6a']}
+        style={stylesGlobal.container}>
+        <Text>Hola</Text>
+      </LinearGradient>
     </>
   )
 }
