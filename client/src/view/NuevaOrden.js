@@ -1,11 +1,11 @@
-import { View, Text } from 'react-native'
 import React from 'react'
+import { Text } from 'react-native'
+
 
 const NuevaOrden = () => {
   return (
-    <View>
-      <Text>NuevaOrden</Text>
-    </View>
+    <>
+    </>
   )
 }
 
