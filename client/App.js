@@ -19,11 +19,12 @@ export default function App() {
         <Stack.Navigator
           screenOptions={{
             headerStyle: {
-              backgroundColor: '#DZ3DBF'
+              backgroundColor: '#1f1f1f'
             },
             headerTitleStyle: {
               fontWeight: 'bold',
-              color: 'white',
+              fontSize:25,
+              color: '#e651ad',
             
             }
           }}
@@ -33,7 +34,7 @@ export default function App() {
             component={NuevaOrden}
             options={{
               headerTitleAlign: 'center',
-              title: 'Nueva Orden',
+              title: 'NAKAMA RAMEN',
               
             }}
           />
