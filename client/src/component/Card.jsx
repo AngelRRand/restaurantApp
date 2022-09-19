@@ -24,13 +24,13 @@ const Card = ({ item }) => {
                             <Text style={[styles.text]}>{categoria}</Text>
                         </View>
                         <View>
-                            <Text style={[styles.text]}>{precio}</Text>
+                            <Text style={[styles.text]}>${precio}</Text>
                         </View>
                         <View>
                             {existencia === true ? 
-                            <Text>No Stock</Text> 
+                            <Text style={{color:'#65ff6c'}}>Disponible</Text>
                             : 
-                            <Text>Disponible</Text>
+                            <Text style={{color:'#ff4e4e'}}>No Stock</Text> 
                             }
                         </View>
                     </View>
@@ -73,9 +73,11 @@ const styles = StyleSheet.create({
         fontSize: 20
     },
     info: {
+        flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        width: 200
     }
 })
 
