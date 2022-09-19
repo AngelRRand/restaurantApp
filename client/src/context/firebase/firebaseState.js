@@ -16,14 +16,15 @@ const FirebaseState = props =>{
 
     //Trae los productos
     const obtenerProductos = () =>{
-        
+        console.log('desdeFireBaseState')
     }
 
     return(
         <FirebaseContext.Provider
             value={{
                 menu: state.menu,
-                firebase
+                firebase,
+                obtenerProductos
             }}
         >
             {props.children}
