@@ -16,7 +16,22 @@ const FirebaseState = props =>{
 
     //Trae los productos
     const obtenerProductos = () =>{
-        console.log('desdeFireBaseState')
+        
+        //Consultar firebase
+        firebase.db.collection('productos').where('existencia', '==', true).onSnapshot(manejaSnap)
+
+        function manejaSnap(snap){
+            let plat = snap.docs.map(doc=>{
+                return{
+                    id: doc.id,
+                    ...doc.data()
+                }
+            });
+            dispatch({
+                type: OBTENER_PRODUCTOS,
+                payload: plat
+            });
+        }
     }
 
     return(
