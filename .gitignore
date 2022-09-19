@@ -2,3 +2,4 @@ client/firebase/a.js
 admin/src/firebase/a.js
 client/src/styles/stylesGlobal.jsx
 client/src/view/RestaurantMenu.js
+client/src/types/index.js
