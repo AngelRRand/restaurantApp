@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
         borderColor:'white'
     },
     containerText:{
-        justifyContent:'center',
+        alignItems:'center',
+        flex: 1,
     },
     image: {
         width: 200,
