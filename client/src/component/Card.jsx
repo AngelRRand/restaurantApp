@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, Image } from 'react-native';
 
 const Card = ({ item }) => {
 
-    const { nombre, categoria, description, imagen, precio } = item
+    const { nombre, categoria, description, imagen, precio, existencia } = item
 
     return (
         <View style={styles.container}>
@@ -12,9 +12,28 @@ const Card = ({ item }) => {
                 <View>
                     <Image style={styles.image} source={{ uri: imagen }} />
                 </View>
-                <View style={styles.containerText}>
-
-                    <Text style={styles.text}>{nombre}</Text>
+                <View style={styles.containerInfo}>
+                    <View style={[styles.spaceText, styles.name]}>
+                        <Text style={[styles.text, styles.titulo]}>{nombre}</Text>
+                    </View>
+                    <View style={[styles.spaceText, styles.description]}>
+                        <Text style={[styles.text]}>{description}</Text>
+                    </View>
+                    <View style={[styles.spaceText, styles.info]}>
+                        <View>
+                            <Text style={[styles.text]}>{categoria}</Text>
+                        </View>
+                        <View>
+                            <Text style={[styles.text]}>{precio}</Text>
+                        </View>
+                        <View>
+                            {existencia === true ? 
+                            <Text>No Stock</Text> 
+                            : 
+                            <Text>Disponible</Text>
+                            }
+                        </View>
+                    </View>
                 </View>
             </View>
         </View>
@@ -25,22 +44,38 @@ const styles = StyleSheet.create({
     container: {
         marginBottom: 30,
     },
-    contenido:{
-        flexDirection:'row',
-        borderWidth:1,
-        borderColor:'white'
+    contenido: {
+        flexDirection: 'row',
+        borderWidth: 1,
+        borderColor: 'white',
+        height: 150,
     },
-    containerText:{
-        alignItems:'center',
+    containerInfo: {
+        alignItems: 'center',
         flex: 1,
     },
     image: {
         width: 200,
         height: 150,
-        resizeMode:'cover'
+        resizeMode: 'cover'
     },
     text: {
-        color: 'white'
+        color: 'white',
+        textAlign: 'center'
+    },
+    spaceText: {
+        height: 40,
+    },
+    name: {
+        marginTop: 10
+    },
+    titulo: {
+        fontSize: 20
+    },
+    info: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
     }
 })
 
