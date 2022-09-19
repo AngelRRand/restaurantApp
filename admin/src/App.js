@@ -4,7 +4,7 @@ import NuevoPlato from "./components/views/NuevoPlato"
 import Sidebar from "./components/ui/Sidebar"
 
 
-import firebase, {FirebaseContext} from './firebase'
+import firebase, {FirebaseContext} from './firebaseData'
 import { Routes, Route } from "react-router-dom"
 
 

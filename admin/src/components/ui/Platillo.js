@@ -1,5 +1,5 @@
 import React,{ useRef, useContext} from 'react'
-import { FirebaseContext} from '../../firebase'
+import { FirebaseContext} from '../../firebaseData'
 
 const Platillo = ({ platillo }) => {
     //Existencia Ref
