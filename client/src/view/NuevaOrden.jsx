@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Text, View, StyleSheet } from 'react-native'
 import stylesGlobal from '../styles/stylesGlobal.jsx';
+import { Button, Text, View, StyleSheet } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient';
 import {useNavigation} from '@react-navigation/native'
 
