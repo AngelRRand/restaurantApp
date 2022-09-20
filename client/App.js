@@ -24,9 +24,9 @@ export default function App() {
             headerTitleStyle: {
               fontWeight: 'bold',
               fontSize:25,
-              color: '#e651ad',
+              color: '#ffdc3d',
             },
-            headerTintColor: '#e651ad'
+            headerTintColor: '#ffdc3d'
           }}
         >
           <Stack.Screen

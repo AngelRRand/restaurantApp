@@ -1,11 +1,15 @@
 import React from 'react';
 import { View, StyleSheet, Text, Image } from 'react-native';
 
-const Card = ({ item, index }) => {
+const Card = ({ item, index, mostrarHeading }) => {
 
     const { nombre, categoria, description, imagen, precio, existencia } = item
     /* console.log(index) */
     return (
+        <>
+        {
+            mostrarHeading(categoria, index)
+        }
         <View style={styles.container}>
             <View style={styles.contenido}>
 
@@ -21,9 +25,6 @@ const Card = ({ item, index }) => {
                     </View>
                     <View style={[styles.spaceText, styles.info]}>
                         <View>
-                            <Text style={[styles.text]}>{categoria}</Text>
-                        </View>
-                        <View>
                             <Text style={[styles.text]}>${precio}</Text>
                         </View>
                         <View>
@@ -37,6 +38,7 @@ const Card = ({ item, index }) => {
                 </View>
             </View>
         </View>
+        </>
     );
 }
 

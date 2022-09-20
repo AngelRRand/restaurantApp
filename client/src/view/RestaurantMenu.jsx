@@ -16,22 +16,23 @@ const RestaurantMenu = () => {
   }, []);
 
   const mostrarHeading = (categoria, i)=>{
-    console.log(i)
+    
     if(i>0){
       const categoriaAnterior = menu[i - 1].categoria;
       if(categoriaAnterior !== categoria){
         return(
           <View style={stylesGlobal.separator}>
-            <Text style={stylesGlobal.text}>{categoria}</Text>
-          </View>
-        )
-      }else{
-        return(
-          <View style={stylesGlobal.separator}>
-            <Text style={stylesGlobal.text}>{categoria}</Text>
+            <Text style={{color: '#ffdc3d', fontSize: 20, textTransform:'uppercase'}}>{categoria}</Text>
           </View>
         )
       }
+    }
+    else{
+      return(
+        <View style={stylesGlobal.separator}>
+          <Text style={{color: '#ffdc3d', fontSize: 20, textTransform:'uppercase'}}>{categoria}</Text>
+        </View>
+      )
     }
   }
   return (
@@ -44,10 +45,9 @@ const RestaurantMenu = () => {
           data={menu}
           keyExtractor={item => item.id}
           renderItem={({ item, index }) => {
-            mostrarHeading(item.categoria, index)
             return (
               
-            <Card item={item} index={index} />
+            <Card item={item} index={index} mostrarHeading={mostrarHeading}/>
             )
           }}
         />
