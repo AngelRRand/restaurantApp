@@ -2,12 +2,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import FirebaseState from './src/context/firebase/firebaseState.js';
 import PedidosbaseState from './src/context/pedidos/pedidosState.js';
-import DetallesPlato from './src/view/DetallesPlato.js';
-import FormularioPlato from './src/view/FormularioPlato.js';
+import DetallesPlato from './src/view/DetallesPlato.jsx';
+import FormularioPlato from './src/view/FormularioPlato.jsx';
 import RestaurantMenu from './src/view/RestaurantMenu.jsx';
 import NuevaOrden from './src/view/NuevaOrden.jsx';
-import ProgresoPedido from './src/view/ProgresoPedido.js';
-import ResumenPedido from './src/view/ResumenPedido.js';
+import ProgresoPedido from './src/view/ProgresoPedido.jsx';
+import ResumenPedido from './src/view/ResumenPedido.jsx';
 
 const Stack = createNativeStackNavigator()
 export default function App() {
