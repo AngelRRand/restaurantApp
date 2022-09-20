@@ -4,7 +4,7 @@ import FirebaseState from './src/context/firebase/firebaseState.js';
 import PedidosbaseState from './src/context/pedidos/pedidosState.js';
 import DetallesPlato from './src/view/DetallesPlato.js';
 import FormularioPlato from './src/view/FormularioPlato.js';
-import RestaurantMenu from './src/view/RestaurantMenu.js';
+import RestaurantMenu from './src/view/RestaurantMenu.jsx';
 import NuevaOrden from './src/view/NuevaOrden.jsx';
 import ProgresoPedido from './src/view/ProgresoPedido.js';
 import ResumenPedido from './src/view/ResumenPedido.js';

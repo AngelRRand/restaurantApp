@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, StyleSheet, Text, Image } from 'react-native';
 
-const Card = ({ item }) => {
+const Card = ({ item, index }) => {
 
     const { nombre, categoria, description, imagen, precio, existencia } = item
-
+    /* console.log(index) */
     return (
         <View style={styles.container}>
             <View style={styles.contenido}>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     contenido: {
         flexDirection: 'row',
         borderWidth: 1,
-        borderColor: 'white',
+        borderColor: '#ffd344',
         height: 150,
         borderRadius:5
     },

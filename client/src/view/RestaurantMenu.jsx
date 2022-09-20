@@ -1,0 +1,60 @@
+import React, { useContext, useEffect } from 'react'
+import { LinearGradient } from 'expo-linear-gradient';
+import stylesGlobal from '../styles/stylesGlobal.jsx';
+import { View, Text, FlatList } from 'react-native'
+import Card from '../component/Card';
+import FirebaseContext from '../context/firebase/firebaseContext';
+
+
+const RestaurantMenu = () => {
+
+  const { menu, obtenerProductos } = useContext(FirebaseContext);
+
+  useEffect(() => {
+    obtenerProductos()
+    //console.log(menu)
+  }, []);
+
+  const mostrarHeading = (categoria, i)=>{
+    console.log(i)
+    if(i>0){
+      const categoriaAnterior = menu[i - 1].categoria;
+      if(categoriaAnterior !== categoria){
+        return(
+          <View style={stylesGlobal.separator}>
+            <Text style={stylesGlobal.text}>{categoria}</Text>
+          </View>
+        )
+      }else{
+        return(
+          <View style={stylesGlobal.separator}>
+            <Text style={stylesGlobal.text}>{categoria}</Text>
+          </View>
+        )
+      }
+    }
+  }
+  return (
+    <LinearGradient
+      colors={['#0f0f0f', '#3d1515']}
+      style={stylesGlobal.container}>
+
+      <View style={stylesGlobal.contenido}>
+        <FlatList
+          data={menu}
+          keyExtractor={item => item.id}
+          renderItem={({ item, index }) => {
+            mostrarHeading(item.categoria, index)
+            return (
+              
+            <Card item={item} index={index} />
+            )
+          }}
+        />
+      </View>
+
+    </LinearGradient>
+  )
+}
+
+export default RestaurantMenu
