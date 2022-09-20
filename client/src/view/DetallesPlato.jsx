@@ -6,10 +6,10 @@ import PedidosbaseContext from '../context/pedidos/pedidosContext';
 const DetallesPlato = () => {
 
   const {plato} = useContext(PedidosbaseContext)
-
+  console.log(plato.nombre)
   return (
     <View>
-      <Text>Holi</Text>
+      <Text>{plato.categoria}</Text>
     </View>
   );
 }
