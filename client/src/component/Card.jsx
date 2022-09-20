@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         borderWidth: 1,
         borderColor: '#ffd344',
+        borderBottomWidth:2,
         height: 150,
         borderRadius:5
     },
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
     },
     image: {
         width: 200,
-        height: 150,
+        height: 147,
         resizeMode: 'cover',
         borderTopLeftRadius:5,
         borderBottomLeftRadius:5
