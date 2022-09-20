@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'white',
         height: 150,
+        borderRadius:5
     },
     containerInfo: {
         alignItems: 'center',
@@ -57,7 +58,9 @@ const styles = StyleSheet.create({
     image: {
         width: 200,
         height: 150,
-        resizeMode: 'cover'
+        resizeMode: 'cover',
+        borderTopLeftRadius:5,
+        borderBottomLeftRadius:5
     },
     text: {
         color: 'white',
@@ -67,10 +70,11 @@ const styles = StyleSheet.create({
         height: 40,
     },
     name: {
-        marginTop: 10
+        marginTop: 10,
     },
     titulo: {
-        fontSize: 20
+        fontSize: 20,
+        fontWeight:'bold'
     },
     info: {
         flex: 1,

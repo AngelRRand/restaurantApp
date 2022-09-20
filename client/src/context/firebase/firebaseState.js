@@ -3,6 +3,7 @@ import firebase from "../../../firebase";
 import FirebaseReducer from "./firebaseReducer";
 import FirebaseContext from "./firebaseContext";
 import { OBTENER_PRODUCTOS } from "../../types";
+import _ from 'lodash'
 const FirebaseState = props =>{
 
     //console.log(firebase)
@@ -27,6 +28,8 @@ const FirebaseState = props =>{
                     ...doc.data()
                 }
             });
+
+            plat = _.sortBy(plat, 'categoria')
             dispatch({
                 type: OBTENER_PRODUCTOS,
                 payload: plat
