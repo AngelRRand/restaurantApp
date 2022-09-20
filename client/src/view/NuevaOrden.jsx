@@ -11,7 +11,7 @@ const NuevaOrden = () => {
   return (
     <>
       <LinearGradient
-        colors={['#0f0f0f', '#31153d']}
+        colors={['#0f0f0f', '#3d1515']}
         style={stylesGlobal.container}>
         <View style={[stylesGlobal.contenido, styles.contenido]}>
           <Button
