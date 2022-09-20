@@ -3,12 +3,15 @@ import { LinearGradient } from 'expo-linear-gradient';
 import stylesGlobal from '../styles/stylesGlobal.jsx';
 import { View, Text, FlatList } from 'react-native'
 import Card from '../component/Card';
-import FirebaseContext from '../context/firebase/firebaseContext';
-
+import FirebaseContext from '../context/firebase/firebaseContext.js';
+import PedidosbaseContext from '../context/pedidos/pedidosContext.js';
 
 const RestaurantMenu = () => {
 
+  //contexto FireBase
   const { menu, obtenerProductos } = useContext(FirebaseContext);
+  //contexto Pedidos
+  const { seleccionarPlato } = useContext(PedidosbaseContext);
 
   useEffect(() => {
     obtenerProductos()
@@ -47,7 +50,7 @@ const RestaurantMenu = () => {
           renderItem={({ item, index }) => {
             return (
               
-            <Card item={item} index={index} mostrarHeading={mostrarHeading}/>
+            <Card item={item} index={index} mostrarHeading={mostrarHeading} seleccionarPlato={seleccionarPlato}/>
             )
           }}
         />

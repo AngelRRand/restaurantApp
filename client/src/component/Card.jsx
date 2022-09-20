@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, StyleSheet, Text, Image } from 'react-native';
+import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 
-const Card = ({ item, index, mostrarHeading }) => {
+const Card = ({ item, index, mostrarHeading, seleccionarPlato }) => {
 
     const { nombre, categoria, description, imagen, precio, existencia } = item
     /* console.log(index) */
@@ -10,6 +10,10 @@ const Card = ({ item, index, mostrarHeading }) => {
         {
             mostrarHeading(categoria, index)
         }
+        <TouchableOpacity
+            onPress={()=> seleccionarPlato(item)}
+        >
+
         <View style={styles.container}>
             <View style={styles.contenido}>
 
@@ -38,6 +42,7 @@ const Card = ({ item, index, mostrarHeading }) => {
                 </View>
             </View>
         </View>
+        </TouchableOpacity>
         </>
     );
 }
