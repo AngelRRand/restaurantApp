@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+import {View, StyleSheet, Text} from 'react-native';
 
-function DetallesPlato() {
+const DetallesPlato = () => {
   return (
-    <div>DetallesPlato</div>
-  )
+    <View>
+      <Text>Holi</Text>
+    </View>
+  );
 }
 
-export default DetallesPlato
+const styles = StyleSheet.create({})
+
+export default DetallesPlato;
