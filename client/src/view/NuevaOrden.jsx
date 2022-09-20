@@ -16,7 +16,7 @@ const NuevaOrden = () => {
         <View style={[stylesGlobal.contenido, styles.contenido]}>
           <Button
             title="Learn More"
-            color="#841584"
+            color="#da7531"
             onPress={()=> navigation.navigate('menu')}
           />
         </View>
