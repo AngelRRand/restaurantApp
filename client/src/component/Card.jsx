@@ -29,12 +29,9 @@ const Card = ({ item, index, mostrarHeading, seleccionarPlato }) => {
                     <View style={[styles.spaceText, styles.name]}>
                         <Text style={[styles.text, styles.titulo]}>{nombre}</Text>
                     </View>
-                    <View style={[styles.spaceText, styles.description]}>
-                        <Text style={[styles.text]}>{description}</Text>
-                    </View>
                     <View style={[styles.spaceText, styles.info]}>
                         <View>
-                            <Text style={[styles.text]}>${precio}</Text>
+                            <Text style={[styles.text]}>$ {precio}</Text>
                         </View>
                         <View>
                             {existencia === true ? 
@@ -77,7 +74,9 @@ const styles = StyleSheet.create({
     },
     text: {
         color: 'white',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontSize:25,
+        letterSpacing:4
     },
     spaceText: {
         height: 40,

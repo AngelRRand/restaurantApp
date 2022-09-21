@@ -14,11 +14,14 @@ const DetallesPlato = () => {
       colors={['#0f0f0f', '#3d1515']}
       style={stylesGlobal.container}>
       <View style={stylesGlobal.contenido}>
-        <View style={[stylesGlobal.separator, styles.containerTitulo]}>
+        <View style={[stylesGlobal.separator, styles.containerText]}>
           <Text style={stylesGlobal.titulo}>{nombre}</Text>
         </View>
         <View>
           <Image style={styles.image} source={{ uri: imagen }} />
+        </View>
+        <View style={[stylesGlobal.separator, styles.containerText]}>
+          <Text style={styles.text}>{description}</Text>
         </View>
       </View>
 
@@ -27,7 +30,7 @@ const DetallesPlato = () => {
 }
 
 const styles = StyleSheet.create({
-  containerTitulo: {
+  containerText: {
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -35,6 +38,10 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 300,
     resizeMode: 'cover',
+  },
+  text:{
+    color: 'white',
+    fontSize:20
   }
 })
 
