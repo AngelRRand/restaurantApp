@@ -55,6 +55,9 @@ const FormularioPlato = () => {
             <AntDesign  name="plus" size={30} color="#fcdc75" />
           </Pressable>
         </View>
+        <View style={[stylesGlobal.separator, styles.containerText]}>
+          <Text style={styles.text}>Su total es de: {total}</Text>
+        </View>
       </View>
     </LinearGradient>
   )
@@ -77,6 +80,10 @@ const styles = StyleSheet.create({
     borderBottomWidth:2, 
     height:50, 
     width:100, 
+    textAlign:'center'
+  },
+  text:{
+    color:"#fcdc75",
     textAlign:'center'
   }
 })
