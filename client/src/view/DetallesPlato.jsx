@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { View, StyleSheet, Text, Image, Button, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import {useNavigation} from '@react-navigation/native'
@@ -11,6 +11,8 @@ const DetallesPlato = () => {
   const { plato } = useContext(PedidosbaseContext)
   //console.log(plato)
   const { nombre, categoria, description, imagen,  } = plato
+  const [cantidad, setCantidad] = useState(1);
+  const [total, setTotal] = useState(0);
 
   const confirmarOrden = () =>{
     Alert.alert(
@@ -21,7 +23,12 @@ const DetallesPlato = () => {
           text: 'Confirmar',
           onPress: ()=>{
             //Almacenar el pedido principal
-
+            const pedido = {
+              ...plato,
+              cantidad,
+              total
+            }
+            console.log(pedido)
             //Navegar hacia el resumen
           }
         },
@@ -56,7 +63,12 @@ const DetallesPlato = () => {
 
       <View style={[stylesGlobal.contenido, styles.bot]}>
 
-        <FormularioPlato/>
+        <FormularioPlato
+        cantidad={cantidad}
+        setCantidad={setCantidad}
+        total={total}
+        setTotal={setTotal}
+        />
         <Button
             title="Pedir"
             color="#da7531"
