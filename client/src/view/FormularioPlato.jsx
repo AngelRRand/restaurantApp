@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { View, StyleSheet, Text, Image, Button, Pressable } from 'react-native';
+import { View, StyleSheet, Text, Image, TextInput, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native'
 import PedidosbaseContext from '../context/pedidos/pedidosContext';
 import stylesGlobal from '../styles/stylesGlobal.jsx';
-
+import { AntDesign } from '@expo/vector-icons';
 const FormularioPlato = () => {
   return (
     <LinearGradient
@@ -16,10 +16,13 @@ const FormularioPlato = () => {
         </View>
         <View style={[stylesGlobal.separator, styles.containerPlus]}>
           <Pressable style={stylesGlobal.btn}>
-            <Text>A</Text>
+            <AntDesign name="plus" size={24} color="#fcdc75" />
           </Pressable>
+          <TextInput
+            value='1'
+          />
           <Pressable style={stylesGlobal.btn}>
-            <Text>A</Text>
+            <AntDesign name="minus" size={24} color="#fcdc75" />
           </Pressable>
         </View>
       </View>
