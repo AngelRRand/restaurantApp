@@ -8,9 +8,9 @@ import FormularioPlato from '../component/FormularioPlato';
 
 const DetallesPlato = () => {
   const navigation = useNavigation()
-  const { plato } = useContext(PedidosbaseContext)
+  const { plato, confirmarPedido } = useContext(PedidosbaseContext)
   //console.log(plato)
-  const { nombre, categoria, description, imagen,  } = plato
+  const { nombre, categoria, description, imagen, precio, existencia } = plato
   const [cantidad, setCantidad] = useState(1);
   const [total, setTotal] = useState(0);
 
@@ -28,7 +28,7 @@ const DetallesPlato = () => {
               cantidad,
               total
             }
-            console.log(pedido)
+            confirmarPedido(pedido)
             //Navegar hacia el resumen
           }
         },
@@ -68,6 +68,8 @@ const DetallesPlato = () => {
         setCantidad={setCantidad}
         total={total}
         setTotal={setTotal}
+        precio={precio}
+        existencia={existencia}
         />
         <Button
             title="Pedir"

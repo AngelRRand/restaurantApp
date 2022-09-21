@@ -1,16 +1,10 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { View, StyleSheet, Text, TextInput, Pressable } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import { useNavigation } from '@react-navigation/native'
-import PedidosbaseContext from '../context/pedidos/pedidosContext';
 import stylesGlobal from '../styles/stylesGlobal.jsx';
 import { AntDesign } from '@expo/vector-icons';
-const FormularioPlato = ({cantidad, setCantidad, total, setTotal}) => {
+const FormularioPlato = ({cantidad, setCantidad, total, setTotal, precio, existencia}) => {
 
   
-  const { plato } = useContext(PedidosbaseContext)
-  const { precio, existencia } = plato
-
   //Calcular el total a pagar 
 
   const calcularTotal = () => {

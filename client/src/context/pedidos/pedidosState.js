@@ -1,7 +1,7 @@
 import { useReducer } from "react";
 import PedidosbaseReducer from "./pedidosReducer";
 import PedidosbaseContext from "./pedidosContext";
-import { SELECCIONAR_PRODUCTO } from "../../types";
+import { SELECCIONAR_PRODUCTO, CONFIMAR_ORDENAR_PLATILLO } from "../../types";
 
 const PedidosbaseState = props =>{
 
@@ -19,12 +19,20 @@ const PedidosbaseState = props =>{
             payload: item
         })
     }
+
+    const confirmarPedido = pedido =>{
+        dispatch({
+            type: CONFIMAR_ORDENAR_PLATILLO,
+            payload: pedido
+        })
+    }
     return(
         <PedidosbaseContext.Provider
             value={{
                 pedido: state.pedido,
                 plato: state.plato,
-                seleccionarPlato
+                seleccionarPlato,
+                confirmarPedido
                 
             }}
         >
