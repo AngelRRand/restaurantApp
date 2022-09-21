@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { View, StyleSheet, Text, Image, Button } from 'react-native';
+import { View, StyleSheet, Text, Image, Button, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native'
 import PedidosbaseContext from '../context/pedidos/pedidosContext';
@@ -15,7 +15,12 @@ const FormularioPlato = () => {
           <Text style={stylesGlobal.titulo}>Pedido</Text>
         </View>
         <View style={[stylesGlobal.separator, styles.containerPlus]}>
-          
+          <Pressable style={stylesGlobal.btn}>
+            <Text>A</Text>
+          </Pressable>
+          <Pressable style={stylesGlobal.btn}>
+            <Text>A</Text>
+          </Pressable>
         </View>
       </View>
     </LinearGradient>
@@ -28,10 +33,10 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   containerPlus: {
-    justifyContent:'space-around',
-    alignItems:'center',
-    flexDirection:'row',
-    marginVertical:30
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    flexDirection: 'row',
+    marginVertical: 30
   }
 })
 
