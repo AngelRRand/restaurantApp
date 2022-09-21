@@ -1,10 +1,11 @@
-import { View, Text } from 'react-native'
 import React from 'react'
+import { View, Text } from 'react-native'
+import stylesGlobal from '../styles/stylesGlobal.jsx';
 
 const FormularioPlato = () => {
   return (
     <View>
-      <Text>FormularioPlato</Text>
+      <Text style={[stylesGlobal.titulo]}>FormularioPlato</Text>
     </View>
   )
 }

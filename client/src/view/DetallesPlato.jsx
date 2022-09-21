@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { View, StyleSheet, Text, Image, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import {useNavigation} from '@react-navigation/native'
 import PedidosbaseContext from '../context/pedidos/pedidosContext';
 import stylesGlobal from '../styles/stylesGlobal.jsx';
 
 const DetallesPlato = () => {
-
+  const navigation = useNavigation()
   const { plato } = useContext(PedidosbaseContext)
   console.log(plato)
   const { nombre, categoria, description, imagen, precio, existencia } = plato
@@ -41,6 +42,7 @@ const DetallesPlato = () => {
         <Button
           title="Pedir"
           color="#da7531"
+          onPress={()=> navigation.navigate('formularioPlato')}
         />
       </View>
 
