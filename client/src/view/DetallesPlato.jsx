@@ -8,7 +8,7 @@ const DetallesPlato = () => {
 
   const { plato } = useContext(PedidosbaseContext)
   console.log(plato)
-  const { nombre, categoria, description, imagen, precio } = plato
+  const { nombre, categoria, description, imagen, precio, existencia } = plato
   return (
     <LinearGradient
       colors={['#0f0f0f', '#3d1515']}
@@ -30,11 +30,13 @@ const DetallesPlato = () => {
       </View>
 
       <View style={[stylesGlobal.contenido, styles.bot]}>
-        <View>
-        <Text style={styles.text}>{precio}</Text>
-        {
-          
-        }
+        <View style={styles.botText}>
+          <Text style={styles.text}>{precio}</Text>
+          {existencia ?
+            <Text style={{ color: '#65ff6c', fontSize: 20, letterSpacing: 3}}>Disponible</Text>
+            :
+            <Text style={{ color: '#ff4e4e', fontSize: 20, letterSpacing: 3}}>No Stock</Text>
+          }
         </View>
         <Button
           title="Pedir"
@@ -68,6 +70,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginHorizontal: 50,
     letterSpacing: 3
+  },
+  botText:{
+    justifyContent:'space-around',
+    alignItems:'center',
+    flexDirection:'row',
+    marginVertical:30
   }
 })
 
