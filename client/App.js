@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import FirebaseState from './src/context/firebase/firebaseState.js';
@@ -57,7 +57,7 @@ export default function App() {
             name='detallesPlato'
             component={DetallesPlato}
             options={{
-              title: 'Detalles Plato'
+              title: 'Detalles'
             }}
           />
           <Stack.Screen
