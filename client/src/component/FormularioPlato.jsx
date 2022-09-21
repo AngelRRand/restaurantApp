@@ -72,7 +72,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     height: 50,
     width: 100,
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize:30
   },
   text: {
     color: "#fcdc75",
