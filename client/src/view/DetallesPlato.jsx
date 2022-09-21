@@ -30,6 +30,7 @@ const DetallesPlato = () => {
             }
             confirmarPedido(pedido)
             //Navegar hacia el resumen
+            navigation.navigate('resumenPedido')
           }
         },
         {
