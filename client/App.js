@@ -4,7 +4,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import FirebaseState from './src/context/firebase/firebaseState.js';
 import PedidosbaseState from './src/context/pedidos/pedidosState.js';
 import DetallesPlato from './src/view/DetallesPlato.jsx';
-import FormularioPlato from './src/view/FormularioPlato.jsx';
 import RestaurantMenu from './src/view/RestaurantMenu.jsx';
 import NuevaOrden from './src/view/NuevaOrden.jsx';
 import ProgresoPedido from './src/view/ProgresoPedido.jsx';
@@ -44,13 +43,6 @@ export default function App() {
             component={RestaurantMenu}
             options={{
               title: 'Menu'
-            }}
-          />
-          <Stack.Screen
-            name='formularioPlato'
-            component={FormularioPlato}
-            options={{
-              title: 'Formulario Plato'
             }}
           />
           <Stack.Screen
