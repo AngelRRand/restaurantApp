@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { View, StyleSheet, Text, Image, Button } from 'react-native';
+import { View, StyleSheet, Text, Image, Button, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import {useNavigation} from '@react-navigation/native'
 import PedidosbaseContext from '../context/pedidos/pedidosContext';
@@ -9,8 +9,31 @@ import FormularioPlato from '../component/FormularioPlato';
 const DetallesPlato = () => {
   const navigation = useNavigation()
   const { plato } = useContext(PedidosbaseContext)
-  console.log(plato)
+  //console.log(plato)
   const { nombre, categoria, description, imagen,  } = plato
+
+  const confirmarOrden = () =>{
+    Alert.alert(
+      '¿Deseas confirmar tu pedido?',
+      'Un pedido confirmado ya no se podra modificar',
+      [
+        {
+          text: 'Confirmar',
+          onPress: ()=>{
+            //Almacenar el pedido principal
+
+            //Navegar hacia el resumen
+          }
+        },
+        {
+          text: 'Cancelar',
+          style: 'cancel'
+        }
+
+      ]
+    )
+  }
+
   return (
     <LinearGradient
       colors={['#0f0f0f', '#3d1515']}
@@ -32,7 +55,14 @@ const DetallesPlato = () => {
       </View>
 
       <View style={[stylesGlobal.contenido, styles.bot]}>
+
         <FormularioPlato/>
+        <Button
+            title="Pedir"
+            color="#da7531"
+            onPress={()=> confirmarOrden()}
+          />
+
       </View>
 
     </LinearGradient>
