@@ -4,12 +4,13 @@ import { LinearGradient } from 'expo-linear-gradient';
 import {useNavigation} from '@react-navigation/native'
 import PedidosbaseContext from '../context/pedidos/pedidosContext';
 import stylesGlobal from '../styles/stylesGlobal.jsx';
+import FormularioPlato from '../component/FormularioPlato';
 
 const DetallesPlato = () => {
   const navigation = useNavigation()
   const { plato } = useContext(PedidosbaseContext)
   console.log(plato)
-  const { nombre, categoria, description, imagen, precio, existencia } = plato
+  const { nombre, categoria, description, imagen,  } = plato
   return (
     <LinearGradient
       colors={['#0f0f0f', '#3d1515']}
@@ -31,19 +32,7 @@ const DetallesPlato = () => {
       </View>
 
       <View style={[stylesGlobal.contenido, styles.bot]}>
-        <View style={styles.botText}>
-          <Text style={styles.text}>{precio}</Text>
-          {existencia ?
-            <Text style={{ color: '#65ff6c', fontSize: 20, letterSpacing: 3}}>Disponible</Text>
-            :
-            <Text style={{ color: '#ff4e4e', fontSize: 20, letterSpacing: 3}}>No Stock</Text>
-          }
-        </View>
-        <Button
-          title="Pedir"
-          color="#da7531"
-          onPress={()=> navigation.navigate('formularioPlato')}
-        />
+        <FormularioPlato/>
       </View>
 
     </LinearGradient>
