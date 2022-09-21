@@ -21,8 +21,15 @@ const DetallesPlato = () => {
           <Image style={styles.image} source={{ uri: imagen }} />
         </View>
         <View style={[stylesGlobal.separator, styles.containerText]}>
+          <View style={stylesGlobal.separator}>
+
+          <Text style={styles.text}>{categoria}</Text>
+          </View>
           <Text style={styles.text}>{description}</Text>
         </View>
+      </View>
+      <View>
+        
       </View>
 
     </LinearGradient>
@@ -40,8 +47,11 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   text:{
-    color: 'white',
-    fontSize:20
+    color: '#fcdc75',
+    fontSize:20,
+    textAlign:'center',
+    marginHorizontal:50,
+    letterSpacing:3
   }
 })
 

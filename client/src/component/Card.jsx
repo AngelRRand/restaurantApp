@@ -73,20 +73,21 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius:5
     },
     text: {
-        color: 'white',
+        color: '#fcdc75',
         textAlign: 'center',
-        fontSize:25,
-        letterSpacing:4
+        fontSize:20,
     },
     spaceText: {
         height: 40,
     },
     name: {
+        height: 60,
         marginTop: 10,
     },
     titulo: {
         fontSize: 20,
-        fontWeight:'bold'
+        fontWeight:'bold',
+        letterSpacing:2
     },
     info: {
         flex: 1,
