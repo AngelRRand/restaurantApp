@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { View, StyleSheet, Text, Image } from 'react-native';
+import { View, StyleSheet, Text, Image, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import PedidosbaseContext from '../context/pedidos/pedidosContext';
 import stylesGlobal from '../styles/stylesGlobal.jsx';
@@ -30,7 +30,16 @@ const DetallesPlato = () => {
       </View>
 
       <View style={[stylesGlobal.contenido, styles.bot]}>
+        <View>
         <Text style={styles.text}>{precio}</Text>
+        {
+          
+        }
+        </View>
+        <Button
+          title="Pedir"
+          color="#da7531"
+        />
       </View>
 
     </LinearGradient>
@@ -42,7 +51,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   bot: {
-    flex: 1,
+    marginBottom: 40
   },
   containerText: {
     justifyContent: 'center',
