@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
-
+import {Pressable, Text, StyleSheet} from 'react-native';
+import { useNavigation } from '@react-navigation/native'
 const BotonResumen = () => {
+    const navigation = useNavigation()
     return (
         <Pressable>
             <Text style={styles.text}>Tu pedido</Text>

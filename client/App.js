@@ -3,11 +3,15 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import FirebaseState from './src/context/firebase/firebaseState.js';
 import PedidosbaseState from './src/context/pedidos/pedidosState.js';
+
+
 import DetallesPlato from './src/view/DetallesPlato.jsx';
 import RestaurantMenu from './src/view/RestaurantMenu.jsx';
 import NuevaOrden from './src/view/NuevaOrden.jsx';
 import ProgresoPedido from './src/view/ProgresoPedido.jsx';
 import ResumenPedido from './src/view/ResumenPedido.jsx';
+import BotonResumen from './src/component/BotonResumen.jsx';
+
 
 const Stack = createNativeStackNavigator()
 export default function App() {
@@ -42,7 +46,8 @@ export default function App() {
             name='menu'
             component={RestaurantMenu}
             options={{
-              title: 'Menu'
+              title: 'Menu',
+              headerRight: p => <BotonResumen/>
             }}
           />
           <Stack.Screen
