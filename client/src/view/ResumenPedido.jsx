@@ -4,6 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native'
 import PedidosbaseContext from '../context/pedidos/pedidosContext';
 import stylesGlobal from '../styles/stylesGlobal.jsx';
+import CardPedidos from '../component/CardPedidos';
 
 const ResumenPedido = () => {
 
@@ -26,7 +27,7 @@ const ResumenPedido = () => {
             renderItem={({ item }) => {
               return (
 
-                <Card item={item} />
+                <CardPedidos item={item} />
               )
             }}
           />

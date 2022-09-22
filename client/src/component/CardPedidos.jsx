@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     text: {
         color: '#fcdc75',
         textAlign: 'center',
-        fontSize:20,
+        fontSize:15,
     },
     spaceText: {
         height: 40,
