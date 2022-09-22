@@ -17,6 +17,7 @@ const ResumenPedido = () => {
   const calcularTotal = () =>{
     let newTotal = 0;
     newTotal = pedido.reduce((nuevo, articulo)=>nuevo + articulo.total, 0)
+    enseñarResumen(newTotal)
   }
 
   return (
@@ -33,10 +34,10 @@ const ResumenPedido = () => {
           <FlatList
             data={pedido}
             keyExtractor={item => item.id}
-            renderItem={({ item }) => {
+            renderItem={({ item, index }) => {
               return (
 
-                <CardPedidos item={item} />
+                <CardPedidos item={item} key={index} />
               )
             }}
           />
