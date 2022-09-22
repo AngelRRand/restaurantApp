@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { View, StyleSheet, Text, FlatList } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native'
@@ -25,7 +25,7 @@ const ResumenPedido = () => {
       colors={['#0f0f0f', '#3d1515']}
       style={stylesGlobal.container}>
 
-      <View style={stylesGlobal.contenido}>
+      <View style={[stylesGlobal.contenido, styles.top]}>
         <View style={[stylesGlobal.separator, styles.containerText]}>
           <Text style={[stylesGlobal.titulo]}>Pedidos</Text>
         </View>
@@ -44,12 +44,12 @@ const ResumenPedido = () => {
 
         </View>
 
-        <View style={[stylesGlobal.separator, styles.containerText]}>
+      </View>
+        <View style={[stylesGlobal.separator, styles.containerText, styles.bot]}>
           <View>
             <Text style={styles.text}>Total a pagar: {total}</Text>
           </View>
         </View>
-      </View>
 
     </LinearGradient>
   )
@@ -66,6 +66,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     letterSpacing: 2
+  },
+  bot: {
+    marginBottom: 40
+  },
+  top:{
+    flex:1
   }
 });
 

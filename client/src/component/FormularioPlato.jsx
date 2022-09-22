@@ -29,7 +29,7 @@ const FormularioPlato = ({cantidad, setCantidad, total, setTotal, precio, existe
   return (
     <>
       <View style={[stylesGlobal.separator, styles.containerText]}>
-        <Text style={styles.text}>Su total es de: {total}</Text>
+        <Text style={styles.text}>El precio es de: {total}</Text>
         {existencia ?
             <Text style={{ color: '#65ff6c', fontSize: 20, letterSpacing: 3}}>Disponible</Text>
             :
