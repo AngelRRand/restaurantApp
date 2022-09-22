@@ -1,24 +1,12 @@
 import React from 'react';
 import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
-import {useNavigation} from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
 
-const Card = ({ item, index, mostrarHeading, seleccionarPlato }) => {
+const CardPedidos = ({ item }) => {
 
-    const { nombre, categoria, imagen, precio, existencia } = item
-    /* console.log(index) */
-    const navigation = useNavigation()
+    const { nombre, imagen, total, cantidad } = item
+
     return (
-        <>
-        {
-            mostrarHeading(categoria, index)
-        }
-        <TouchableOpacity
-            onPress={()=> {
-                seleccionarPlato(item)
-                navigation.navigate('detallesPlato')
-            }}
-        >
-
         <View style={styles.container}>
             <View style={styles.contenido}>
 
@@ -31,21 +19,15 @@ const Card = ({ item, index, mostrarHeading, seleccionarPlato }) => {
                     </View>
                     <View style={[styles.spaceText, styles.info]}>
                         <View>
-                            <Text style={[styles.text]}>$ {precio}</Text>
+                            <Text style={[styles.text]}>Cantidad: {cantidad}</Text>
                         </View>
                         <View>
-                            {existencia === true ? 
-                            <Text style={{color:'#65ff6c'}}>Disponible</Text>
-                            : 
-                            <Text style={{color:'#ff4e4e'}}>No Stock</Text> 
-                            }
+                            <Text style={[styles.text]}>Total: ${total}</Text>
                         </View>
                     </View>
                 </View>
             </View>
         </View>
-        </TouchableOpacity>
-        </>
     );
 }
 
@@ -98,4 +80,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Card;
+export default CardPedidos;
