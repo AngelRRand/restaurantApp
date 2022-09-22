@@ -18,15 +18,15 @@ const ResumenPedido = () => {
         <View style={[stylesGlobal.separator, styles.containerText]}>
           <Text style={[stylesGlobal.titulo]}>Pedidos</Text>
         </View>
-        <View style={[stylesGlobal.separator, styles.containerText]}>
+        <View style={stylesGlobal.separator}>
 
           <FlatList
             data={pedido}
             keyExtractor={item => item.id}
-            renderItem={({ item, index }) => {
+            renderItem={({ item }) => {
               return (
 
-                <Card item={item} index={index} mostrarHeading={mostrarHeading} seleccionarPlato={seleccionarPlato} />
+                <Card item={item} />
               )
             }}
           />
@@ -40,7 +40,10 @@ const ResumenPedido = () => {
 }
 
 const styles = StyleSheet.create({
-
+  containerText: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
 });
 
 export default ResumenPedido
