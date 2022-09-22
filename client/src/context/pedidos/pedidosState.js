@@ -1,13 +1,14 @@
 import { useReducer } from "react";
 import PedidosbaseReducer from "./pedidosReducer";
 import PedidosbaseContext from "./pedidosContext";
-import { SELECCIONAR_PRODUCTO, CONFIMAR_ORDENAR_PLATILLO } from "../../types";
+import { SELECCIONAR_PRODUCTO, CONFIMAR_ORDENAR_PLATILLO, MOSTRAR_RESUMEN } from "../../types";
 
 const PedidosbaseState = props =>{
 
     const initialState ={
         pedido: [],
-        plato: null
+        plato: null,
+        total: 0
     }
 
     //useReducer con dispatch para ejecutar las funciones
@@ -26,13 +27,22 @@ const PedidosbaseState = props =>{
             payload: pedido
         })
     }
+
+    const TotalPagar = total =>{
+        dispatch({
+            type: MOSTRAR_RESUMEN,
+            payload: total
+        })
+    }
     return(
         <PedidosbaseContext.Provider
             value={{
                 pedido: state.pedido,
                 plato: state.plato,
+                total: state.total,
                 seleccionarPlato,
-                confirmarPedido
+                confirmarPedido,
+                TotalPagar
                 
             }}
         >
