@@ -22,7 +22,7 @@ const CardPedidos = ({ item }) => {
                             <Text style={[styles.text]}>Cantidad: {cantidad}</Text>
                         </View>
                         <View>
-                            <Text style={[styles.text]}>Total: ${total}</Text>
+                            <Text style={[styles.text]}>Precio: ${total}</Text>
                         </View>
                     </View>
                 </View>

@@ -34,6 +34,11 @@ const ResumenPedido = () => {
 
         </View>
 
+        <View style={[stylesGlobal.separator, styles.containerText]}>
+          <View>
+            <Text style={styles.text}>Total a pagar: {total}</Text>
+          </View>
+        </View>
       </View>
 
     </LinearGradient>
@@ -45,6 +50,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
+  text: {
+    fontSize: 22,
+    color: '#fcdc75',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    letterSpacing: 2
+  }
 });
 
 export default ResumenPedido
