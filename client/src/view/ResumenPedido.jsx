@@ -7,8 +7,17 @@ import stylesGlobal from '../styles/stylesGlobal.jsx';
 import CardPedidos from '../component/CardPedidos';
 
 const ResumenPedido = () => {
-
   const { pedido, total, enseñarResumen } = useContext(PedidosbaseContext)
+
+
+  useEffect(() => {
+    calcularTotal()
+  }, [pedido])
+  
+  const calcularTotal = () =>{
+    let newTotal = 0;
+    newTotal = pedido.reduce((nuevo, articulo)=>nuevo + articulo.total, 0)
+  }
 
   return (
     <LinearGradient
