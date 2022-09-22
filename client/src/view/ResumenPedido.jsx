@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { View, StyleSheet, Text, FlatList, Button, Pressable } from 'react-native';
+import { View, StyleSheet, Text, FlatList, Button, TouchableOpacity, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native'
 import PedidosbaseContext from '../context/pedidos/pedidosContext';
@@ -18,6 +18,27 @@ const ResumenPedido = () => {
     let newTotal = 0;
     newTotal = pedido.reduce((nuevo, articulo) => nuevo + articulo.total, 0)
     enseñarResumen(newTotal)
+  }
+
+  const confirmarPedido = () =>{
+    Alert.alert(
+      '¿Deseas confirmar tu pedido?',
+      'Revise bien si todo es correcto.',
+      [
+        {
+          text: 'Confirmar',
+          onPress: ()=>{
+            //Navegar hacia el resumen
+            navigation.navigate('progresoPedido')
+          }
+        },
+        {
+          text: 'Cancelar',
+          style: 'cancel'
+        }
+
+      ]
+    )
   }
 
   return (
@@ -55,9 +76,9 @@ const ResumenPedido = () => {
           <Text style={styles.text}>Total a pagar: {total}</Text>
         </View>
         
-        <Pressable style={[stylesGlobal.btn,{backgroundColor:'#fcdc75', width:'100%', marginVertical:20}]} onPress={() => navigation.navigate('menu')}>
+        <TouchableOpacity style={[stylesGlobal.btn,{backgroundColor:'#fcdc75', width:'100%', marginVertical:20}]} onPress={() => confirmarPedido()}>
           <Text style={[styles.text,{color:'black'}]}>Ordenar Pedido</Text>
-        </Pressable>
+        </TouchableOpacity>
       </View>
 
     </LinearGradient>

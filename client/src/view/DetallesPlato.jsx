@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { View, StyleSheet, Text, Image, Button, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import {useNavigation} from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
 import PedidosbaseContext from '../context/pedidos/pedidosContext';
 import stylesGlobal from '../styles/stylesGlobal.jsx';
 import FormularioPlato from '../component/FormularioPlato';
@@ -14,32 +14,17 @@ const DetallesPlato = () => {
   const [cantidad, setCantidad] = useState(1);
   const [total, setTotal] = useState(0);
 
-  const confirmarOrden = () =>{
-    Alert.alert(
-      '¿Deseas confirmar tu pedido?',
-      'Un pedido confirmado ya no se podra modificar',
-      [
-        {
-          text: 'Confirmar',
-          onPress: ()=>{
-            //Almacenar el pedido principal
-            const pedido = {
-              ...plato,
-              cantidad,
-              total
-            }
-            confirmarPedido(pedido)
-            //Navegar hacia el resumen
-            navigation.navigate('resumenPedido')
-          }
-        },
-        {
-          text: 'Cancelar',
-          style: 'cancel'
-        }
+  const confirmarOrden = () => {
 
-      ]
-    )
+    const pedido = {
+      ...plato,
+      cantidad,
+      total
+    }
+    confirmarPedido(pedido)
+    //Navegar hacia el resumen
+    navigation.navigate('resumenPedido')
+
   }
 
   return (
@@ -65,18 +50,18 @@ const DetallesPlato = () => {
       <View style={[stylesGlobal.contenido, styles.bot]}>
 
         <FormularioPlato
-        cantidad={cantidad}
-        setCantidad={setCantidad}
-        total={total}
-        setTotal={setTotal}
-        precio={precio}
-        existencia={existencia}
+          cantidad={cantidad}
+          setCantidad={setCantidad}
+          total={total}
+          setTotal={setTotal}
+          precio={precio}
+          existencia={existencia}
         />
         <Button
-            title="Pedir"
-            color="#da7531"
-            onPress={()=> confirmarOrden()}
-          />
+          title="Pedir"
+          color="#da7531"
+          onPress={() => confirmarOrden()}
+        />
 
       </View>
 
@@ -107,11 +92,11 @@ const styles = StyleSheet.create({
     marginHorizontal: 50,
     letterSpacing: 3
   },
-  botText:{
-    justifyContent:'space-around',
-    alignItems:'center',
-    flexDirection:'row',
-    marginVertical:30
+  botText: {
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    flexDirection: 'row',
+    marginVertical: 30
   }
 })
 
