@@ -9,7 +9,7 @@ import CardPedidos from '../component/CardPedidos';
 const ResumenPedido = () => {
   const { pedido, total, enseñarResumen } = useContext(PedidosbaseContext)
 
-
+  const navigation = useNavigation()
   useEffect(() => {
     calcularTotal()
   }, [pedido])
@@ -49,6 +49,11 @@ const ResumenPedido = () => {
           <View>
             <Text style={styles.text}>Total a pagar: {total}</Text>
           </View>
+          <Button
+            title="Seguir Pidiendo"
+            color="#da7531"
+            onPress={()=> navigation.navigate('menu')}
+          />
         </View>
 
     </LinearGradient>
