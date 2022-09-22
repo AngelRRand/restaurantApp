@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native'
-
+import { FontAwesome } from '@expo/vector-icons';
 const CardPedidos = ({ item }) => {
 
     const { nombre, imagen, total, cantidad } = item
@@ -12,6 +11,9 @@ const CardPedidos = ({ item }) => {
 
                 <View>
                     <Image style={styles.image} source={{ uri: imagen }} />
+                        <TouchableOpacity style={styles.eliminar}>
+                        <FontAwesome name="close" size={35} color="#ffd344" />
+                        </TouchableOpacity>
                 </View>
                 <View style={styles.containerInfo}>
                     <View style={[styles.spaceText, styles.name]}>
@@ -65,11 +67,13 @@ const styles = StyleSheet.create({
     name: {
         height: 60,
         marginTop: 10,
+        width:'100%'
     },
     titulo: {
         fontSize: 20,
         fontWeight:'bold',
-        letterSpacing:2
+        letterSpacing:2,
+        textAlign:'center',
     },
     info: {
         flex: 1,
@@ -77,6 +81,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         width: 200
+    },
+    eliminar:{
+        backgroundColor:'black',
+        height:40,
+        width:40,
+        justifyContent:'center',
+        alignItems:'center',
+        position:'absolute',
+        left: 0,
+        borderRadius:200
     }
 })
 
