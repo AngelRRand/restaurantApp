@@ -9,12 +9,12 @@ const BotonResumen = () => {
     const { pedido } = useContext(PedidosbaseContext)
     const navigation = useNavigation()
 
-
     return (
         <>
             {
-                pedido.lenght === 0 ?
-                    (null)
+                pedido.length === 0 ?
+                    <>
+                    </>
                     :
                     (
                     <Pressable style={styles.btn} onPress={() => navigation.navigate('resumenPedido')}>

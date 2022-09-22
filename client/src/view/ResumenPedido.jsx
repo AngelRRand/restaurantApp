@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { View, StyleSheet, Text, FlatList } from 'react-native';
+import { View, StyleSheet, Text, FlatList, Button, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native'
 import PedidosbaseContext from '../context/pedidos/pedidosContext';
@@ -13,10 +13,10 @@ const ResumenPedido = () => {
   useEffect(() => {
     calcularTotal()
   }, [pedido])
-  
-  const calcularTotal = () =>{
+
+  const calcularTotal = () => {
     let newTotal = 0;
-    newTotal = pedido.reduce((nuevo, articulo)=>nuevo + articulo.total, 0)
+    newTotal = pedido.reduce((nuevo, articulo) => nuevo + articulo.total, 0)
     enseñarResumen(newTotal)
   }
 
@@ -32,6 +32,7 @@ const ResumenPedido = () => {
         <View style={stylesGlobal.separator}>
 
           <FlatList
+            style={styles.flat}
             data={pedido}
             keyExtractor={item => item.id}
             renderItem={({ item, index }) => {
@@ -41,20 +42,23 @@ const ResumenPedido = () => {
               )
             }}
           />
-
-        </View>
-
-      </View>
-        <View style={[stylesGlobal.separator, styles.containerText, styles.bot]}>
-          <View>
-            <Text style={styles.text}>Total a pagar: {total}</Text>
-          </View>
           <Button
             title="Seguir Pidiendo"
             color="#da7531"
-            onPress={()=> navigation.navigate('menu')}
+            onPress={() => navigation.navigate('menu')}
           />
         </View>
+
+      </View>
+      <View style={[stylesGlobal.separator, styles.containerText, styles.bot]}>
+        <View>
+          <Text style={styles.text}>Total a pagar: {total}</Text>
+        </View>
+        
+        <Pressable style={[stylesGlobal.btn,{backgroundColor:'#fcdc75', width:'100%', marginVertical:20}]} onPress={() => navigation.navigate('menu')}>
+          <Text style={[styles.text,{color:'black'}]}>Ordenar Pedido</Text>
+        </Pressable>
+      </View>
 
     </LinearGradient>
   )
@@ -65,6 +69,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
+
   text: {
     fontSize: 22,
     color: '#fcdc75',
@@ -73,10 +78,16 @@ const styles = StyleSheet.create({
     letterSpacing: 2
   },
   bot: {
+    marginTop: 70,
     marginBottom: 40
   },
-  top:{
-    flex:1
+  top: {
+    flex: 1,
+    marginBottom: 50
+  },
+  btn: {
+    marginVertical: 30,
+    height: 200
   }
 });
 
