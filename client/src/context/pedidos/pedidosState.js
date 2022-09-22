@@ -28,7 +28,7 @@ const PedidosbaseState = props =>{
         })
     }
 
-    const TotalPagar = total =>{
+    const enseñarResumen = total =>{
         dispatch({
             type: MOSTRAR_RESUMEN,
             payload: total
@@ -42,7 +42,7 @@ const PedidosbaseState = props =>{
                 total: state.total,
                 seleccionarPlato,
                 confirmarPedido,
-                TotalPagar
+                enseñarResumen
                 
             }}
         >

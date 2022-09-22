@@ -8,7 +8,7 @@ import CardPedidos from '../component/CardPedidos';
 
 const ResumenPedido = () => {
 
-  const { pedido } = useContext(PedidosbaseContext)
+  const { pedido, total, enseñarResumen } = useContext(PedidosbaseContext)
 
   return (
     <LinearGradient
