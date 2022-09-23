@@ -5,6 +5,8 @@ import { useNavigation } from '@react-navigation/native'
 import PedidosbaseContext from '../context/pedidos/pedidosContext';
 import stylesGlobal from '../styles/stylesGlobal.jsx';
 import CardPedidos from '../component/CardPedidos';
+import firebase from '../../firebase'
+
 
 const ResumenPedido = () => {
   const { pedido, total, enseñarResumen } = useContext(PedidosbaseContext)
@@ -27,7 +29,22 @@ const ResumenPedido = () => {
       [
         {
           text: 'Confirmar',
-          onPress: ()=>{
+          onPress: async()=>{
+            //crear un pedido
+            const pedidoObj = {
+              tiempoentrega: 0,
+              completado: false,
+              total: Number(total),
+              orden: pedido,
+              creado: Date.now()
+            }
+
+            //Escribir pedido en firebase
+            try {
+              const pedido = await firebase.db.collection('ordenes').add(pedidoObj)
+            } catch (error) {
+              console.log(error)
+            }
             //Navegar hacia el resumen
             navigation.navigate('progresoPedido')
           }
