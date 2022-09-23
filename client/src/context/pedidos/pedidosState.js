@@ -1,7 +1,10 @@
 import { useReducer } from "react";
 import PedidosbaseReducer from "./pedidosReducer";
 import PedidosbaseContext from "./pedidosContext";
-import { SELECCIONAR_PRODUCTO, CONFIMAR_ORDENAR_PLATILLO, MOSTRAR_RESUMEN } from "../../types";
+import { SELECCIONAR_PRODUCTO, 
+    CONFIMAR_ORDENAR_PLATILLO, 
+    MOSTRAR_RESUMEN,
+    ELIMINAR_PEDIDO } from "../../types";
 
 const PedidosbaseState = props =>{
 
@@ -34,6 +37,13 @@ const PedidosbaseState = props =>{
             payload: total
         })
     }
+
+    const eliminarPedido = id =>{
+        dispatch({
+            type: ELIMINAR_PEDIDO,
+            payload: id
+        })
+    }
     return(
         <PedidosbaseContext.Provider
             value={{
@@ -42,8 +52,8 @@ const PedidosbaseState = props =>{
                 total: state.total,
                 seleccionarPlato,
                 confirmarPedido,
-                enseñarResumen
-                
+                enseñarResumen,
+                eliminarPedido
             }}
         >
             {props.children}
