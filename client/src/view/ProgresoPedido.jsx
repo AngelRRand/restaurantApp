@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native'
 import PedidosbaseContext from '../context/pedidos/pedidosContext';
 const ProgresoPedido = () => {
   
-  const { plato, confirmarPedido } = useContext(PedidosbaseContext)
+  const { idpedido } = useContext(PedidosbaseContext)
 
   return (
 

@@ -30,7 +30,7 @@ export default (state, action) => {
         case PEDIDO_ORDENADO:
             return {
                 ...state,
-                pedido: state.pedido.filter(art => art.id !== action.payload)
+                idpedido: action.payload
             }
         default:
             return state

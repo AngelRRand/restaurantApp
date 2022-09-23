@@ -9,7 +9,7 @@ import firebase from '../../firebase'
 
 
 const ResumenPedido = () => {
-  const { pedido, total, enseñarResumen } = useContext(PedidosbaseContext)
+  const { pedido, total, enseñarResumen, pedidoRealizado } = useContext(PedidosbaseContext)
 
   const navigation = useNavigation()
   useEffect(() => {
@@ -22,14 +22,14 @@ const ResumenPedido = () => {
     enseñarResumen(newTotal)
   }
 
-  const confirmarPedido = () =>{
+  const confirmarPedido = () => {
     Alert.alert(
       '¿Deseas confirmar tu pedido?',
       'Revise bien si todo es correcto.',
       [
         {
           text: 'Confirmar',
-          onPress: async()=>{
+          onPress: async () => {
             //crear un pedido
             const pedidoObj = {
               tiempoentrega: 0,
@@ -42,11 +42,15 @@ const ResumenPedido = () => {
             //Escribir pedido en firebase
             try {
               const pedido = await firebase.db.collection('ordenes').add(pedidoObj)
+              pedidoRealizado(pedido.id)
+
+              //Navegar hacia el resumen
+              navigation.navigate('progresoPedido')
+
             } catch (error) {
               console.log(error)
             }
-            //Navegar hacia el resumen
-            navigation.navigate('progresoPedido')
+
           }
         },
         {
@@ -57,13 +61,13 @@ const ResumenPedido = () => {
       ]
     )
   }
-  const confirmarEliminar = (nombre, id) =>{
+  const confirmarEliminar = (nombre, id) => {
     Alert.alert(
       `¿Deseas Eliminar ${nombre} de su lista?`,
       [
         {
           text: 'Confirmar',
-          onPress: ()=>{
+          onPress: () => {
             //Eliminar del state
             eliminarPedido(id)
           }
@@ -111,9 +115,9 @@ const ResumenPedido = () => {
         <View>
           <Text style={styles.text}>Total a pagar: {total}</Text>
         </View>
-        
-        <TouchableOpacity style={[stylesGlobal.btn,{backgroundColor:'#fcdc75', width:'100%', marginVertical:20}]} onPress={() => confirmarPedido()}>
-          <Text style={[styles.text,{color:'black'}]}>Ordenar Pedido</Text>
+
+        <TouchableOpacity style={[stylesGlobal.btn, { backgroundColor: '#fcdc75', width: '100%', marginVertical: 20 }]} onPress={() => confirmarPedido()}>
+          <Text style={[styles.text, { color: 'black' }]}>Ordenar Pedido</Text>
         </TouchableOpacity>
       </View>
 
