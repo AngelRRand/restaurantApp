@@ -40,14 +40,16 @@ const ResumenPedido = () => {
       ]
     )
   }
-  const confirmarEliminar = (name) =>{
+  const confirmarEliminar = (nombre, id) =>{
     Alert.alert(
-      `¿Deseas Eliminar ${name} de su lista?`,
+      `¿Deseas Eliminar ${nombre} de su lista?`,
       [
         {
           text: 'Confirmar',
           onPress: ()=>{
-            //Navegar hacia el resumen
+            //Eliminar del state
+
+            //calcular
             navigation.navigate('progresoPedido')
           }
         },

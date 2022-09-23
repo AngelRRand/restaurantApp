@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 const CardPedidos = ({ item, confirmarEliminar }) => {
 
-    const { nombre, imagen, total, cantidad } = item
+    const { nombre, imagen, total, cantidad, id } = item
 
     return (
         <View style={styles.container}>
@@ -29,7 +29,7 @@ const CardPedidos = ({ item, confirmarEliminar }) => {
             </View>
             <TouchableOpacity
                 style={styles.eliminar}
-                onPress={() => confirmarEliminar(nombre)}
+                onPress={() => confirmarEliminar(nombre, id)}
             >
                 <Text style={styles.textElimin}>Eliminar</Text>
             </TouchableOpacity>
