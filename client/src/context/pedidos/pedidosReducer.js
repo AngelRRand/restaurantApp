@@ -1,4 +1,9 @@
-import { SELECCIONAR_PRODUCTO, CONFIMAR_ORDENAR_PLATILLO, MOSTRAR_RESUMEN } from "../../types";
+import {
+    SELECCIONAR_PRODUCTO,
+    CONFIMAR_ORDENAR_PLATILLO,
+    MOSTRAR_RESUMEN,
+    ELIMINAR_PEDIDO
+} from "../../types";
 export default (state, action) => {
     switch (action.type) {
         case SELECCIONAR_PRODUCTO:
@@ -15,6 +20,11 @@ export default (state, action) => {
             return {
                 ...state,
                 total: action.payload
+            }
+        case ELIMINAR_PEDIDO:
+            return {
+                ...state,
+                pedido: state.pedido.filter(art => art.id !== action.payload)
             }
         default:
             return state

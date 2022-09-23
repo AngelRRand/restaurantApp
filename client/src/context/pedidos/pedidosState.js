@@ -4,7 +4,8 @@ import PedidosbaseContext from "./pedidosContext";
 import { SELECCIONAR_PRODUCTO, 
     CONFIMAR_ORDENAR_PLATILLO, 
     MOSTRAR_RESUMEN,
-    ELIMINAR_PEDIDO } from "../../types";
+    ELIMINAR_PEDIDO
+} from "../../types";
 
 const PedidosbaseState = props =>{
 
