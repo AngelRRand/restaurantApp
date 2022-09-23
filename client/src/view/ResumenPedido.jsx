@@ -49,8 +49,6 @@ const ResumenPedido = () => {
           onPress: ()=>{
             //Eliminar del state
             eliminarPedido(id)
-            //calcular
-            navigation.navigate('progresoPedido')
           }
         },
         {
