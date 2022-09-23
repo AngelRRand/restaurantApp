@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-const CardPedidos = ({ item }) => {
+const CardPedidos = ({ item, confirmarEliminar }) => {
 
     const { nombre, imagen, total, cantidad } = item
 
@@ -11,9 +11,7 @@ const CardPedidos = ({ item }) => {
 
                 <View>
                     <Image style={styles.image} source={{ uri: imagen }} />
-                        <TouchableOpacity style={styles.eliminar}>
-                        <FontAwesome name="close" size={35} color="#ffd344" />
-                        </TouchableOpacity>
+
                 </View>
                 <View style={styles.containerInfo}>
                     <View style={[styles.spaceText, styles.name]}>
@@ -29,6 +27,12 @@ const CardPedidos = ({ item }) => {
                     </View>
                 </View>
             </View>
+            <TouchableOpacity
+                style={styles.eliminar}
+                onPress={() => confirmarEliminar(nombre)}
+            >
+                <Text style={styles.textElimin}>Eliminar</Text>
+            </TouchableOpacity>
         </View>
     );
 }
@@ -41,9 +45,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         borderWidth: 1,
         borderColor: '#ffd344',
-        borderBottomWidth:2,
+        borderBottomWidth: 2,
         height: 150,
-        borderRadius:5
+        borderTopRightRadius:5,
+        borderTopLeftRadius:5
     },
     containerInfo: {
         alignItems: 'center',
@@ -53,13 +58,12 @@ const styles = StyleSheet.create({
         width: 200,
         height: 147,
         resizeMode: 'cover',
-        borderTopLeftRadius:5,
-        borderBottomLeftRadius:5
+        borderTopLeftRadius: 5,
     },
     text: {
         color: '#fcdc75',
         textAlign: 'center',
-        fontSize:15,
+        fontSize: 15,
     },
     spaceText: {
         height: 40,
@@ -67,13 +71,13 @@ const styles = StyleSheet.create({
     name: {
         height: 60,
         marginTop: 10,
-        width:'100%'
+        width: '100%'
     },
     titulo: {
         fontSize: 20,
-        fontWeight:'bold',
-        letterSpacing:2,
-        textAlign:'center',
+        fontWeight: 'bold',
+        letterSpacing: 2,
+        textAlign: 'center',
     },
     info: {
         flex: 1,
@@ -82,15 +86,18 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         width: 200
     },
-    eliminar:{
-        backgroundColor:'black',
-        height:40,
-        width:40,
-        justifyContent:'center',
-        alignItems:'center',
-        position:'absolute',
-        left: 0,
-        borderRadius:200
+    eliminar: {
+        backgroundColor: '#ffd344',
+        height: 25,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    textElimin:{
+        color: '#1d1d1d',
+        textAlign: 'center',
+        fontSize: 15,
+        fontWeight:'bold',
+
     }
 })
 

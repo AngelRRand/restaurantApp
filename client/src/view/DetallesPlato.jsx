@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { View, StyleSheet, Text, Image, Button } from 'react-native';
+import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native'
 import PedidosbaseContext from '../context/pedidos/pedidosContext';
@@ -57,11 +57,13 @@ const DetallesPlato = () => {
           precio={precio}
           existencia={existencia}
         />
-        <Button
-          title="Pedir"
-          color="#da7531"
+
+        <TouchableOpacity
+          style={styles.btn}
           onPress={() => confirmarOrden()}
-        />
+        >
+          <Text style={styles.textBtn}>Agregar a pedidas</Text>
+        </TouchableOpacity>
 
       </View>
 
@@ -97,6 +99,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     marginVertical: 30
+  },
+  btn: {
+    backgroundColor: '#ffd344',
+    height: 35,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textBtn: {
+    color: '#1d1d1d',
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
+
   }
 })
 

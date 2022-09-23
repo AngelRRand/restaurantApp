@@ -40,6 +40,25 @@ const ResumenPedido = () => {
       ]
     )
   }
+  const confirmarEliminar = (name) =>{
+    Alert.alert(
+      `¿Deseas Eliminar ${name} de su lista?`,
+      [
+        {
+          text: 'Confirmar',
+          onPress: ()=>{
+            //Navegar hacia el resumen
+            navigation.navigate('progresoPedido')
+          }
+        },
+        {
+          text: 'Cancelar',
+          style: 'cancel'
+        }
+
+      ]
+    )
+  }
 
   return (
     <LinearGradient
@@ -59,13 +78,13 @@ const ResumenPedido = () => {
             renderItem={({ item, index }) => {
               return (
 
-                <CardPedidos item={item} key={index} />
+                <CardPedidos item={item} key={index} confirmarEliminar={confirmarEliminar} />
               )
             }}
           />
           <Button
             title="Seguir Pidiendo"
-            color="#da7531"
+            color="#e99739"
             onPress={() => navigation.navigate('menu')}
           />
         </View>
